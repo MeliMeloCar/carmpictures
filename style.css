@@ -16,7 +16,7 @@ html, body {
 .hero {
     height: 100vh; /* Pleine hauteur de l'écran */
     width: 100%;   /* Pleine largeur de l'écran */
-    background-image: url('https://via.placeholder.com/1500'); /* Image d'arrière-plan (remplace avec ton image) */
+    background-image: url('https://via.placeholder.com/1500'); /* Remplace par ton image de fond */
     background-size: cover;
     background-position: center;
     display: flex;
@@ -28,7 +28,7 @@ html, body {
 
 /* Contenu centré dans la section */
 .content {
-    max-width: 800px; /* Largeur maximale du texte */
+    max-width: 800px;
     padding: 20px;
 }
 
@@ -60,4 +60,38 @@ p {
 .button:hover {
     background-color: #333;
     color: white;
+}
+
+/* Section portfolio */
+.portfolio {
+    padding: 50px 20px;
+    background-color: #f8f8f8;
+    text-align: center;
+}
+
+.portfolio h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+.gallery {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.image img {
+    width: 300px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #333;
+    color: white;
+    margin-top: 50px;
 }

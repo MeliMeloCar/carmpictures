@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfolio de Carmelo Mosca</title>
     <style>
-        /* Enlève les marges et le padding par défaut */
+        /* Enlève les marges et padding par défaut */
         * {
             margin: 0;
             padding: 0;
@@ -15,9 +15,10 @@
         /* Mettre le body et html en 100% de hauteur pour occuper toute la fenêtre */
         html, body {
             height: 100%;
+            overflow: hidden; /* Empêche la barre de défilement globale */
         }
 
-        /* Le conteneur de l'iframe prend toute la largeur et hauteur */
+        /* Conteneur qui prend toute la taille de l'écran */
         .iframe-container {
             position: fixed;
             top: 0;
@@ -37,12 +38,11 @@
 </head>
 
 <body>
-    <!-- Conteneur pour l'iframe de Canva en plein écran -->
+    <!-- Conteneur pour l'iframe en plein écran -->
     <div class="iframe-container">
-        <iframe loading="lazy" 
-                src="https://www.canva.com/design/DAGa_NCoaCY/QyTNa3AUINkKCP5YY3V88A/view?embed" 
-                allowfullscreen="allowfullscreen" allow="fullscreen"></iframe>
+        <iframe loading="lazy"
+                src="https://www.canva.com/design/DAGa_NCoaCY/QyTNa3AUINkKCP5YY3V88A/view?embed&fullPage=true" 
+                allowfullscreen="true" allow="fullscreen"></iframe>
     </div>
 </body>
-
 </html>

@@ -1,90 +1,27 @@
-/* Reset général */
+/* Reset général pour enlever les marges et paddings par défaut */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-/* Style général */
+/* Style général du body */
 body {
     font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
-    color: #333;
-    line-height: 1.6;
-    text-align: center;
-    padding: 0;
-    margin: 0;
+    height: 100vh; /* La hauteur totale de la fenêtre */
     display: flex;
     flex-direction: column;
-    height: 100vh;
+    justify-content: space-between;
 }
 
-/* Header */
-header {
-    background-color: #333;
-    color: #fff;
-    padding: 2em 0;
-    text-align: center;
-    flex-shrink: 0;
-}
-
-header h1 {
-    font-size: 2.5em;
-    margin-bottom: 0.5em;
-}
-
-header p {
-    font-size: 1.2em;
-    margin-bottom: 1.5em;
-}
-
-.cta-btn {
-    background-color: #0066cc;
-    color: white;
-    padding: 1em 2em;
-    text-decoration: none;
-    border-radius: 5px;
-}
-
-.cta-btn:hover {
-    background-color: #004999;
-}
-
-/* Portfolio */
-#portfolio {
-    background-color: #fff;
-    padding: 2em;
-    flex-shrink: 0;
-}
-
-#portfolio h2 {
-    font-size: 2em;
-    margin-bottom: 1em;
-}
-
-.portfolio-gallery {
-    display: flex;
-    justify-content: center;
-    gap: 2em;
-}
-
-.portfolio-item img {
-    width: 300px;
-    height: 200px;
-    object-fit: cover;
-    border-radius: 8px;
-}
-
-/* Fullscreen iframe */
+/* Style de l'iframe */
 .iframe-container {
     position: relative;
     width: 100%;
-    height: 100vh; /* Occupation de 100% de la hauteur de l'écran */
-    margin-top: 2em;
-    margin-bottom: 2em;
+    height: 100vh; /* L'iframe prend toute la hauteur de l'écran */
+    margin: 0;
     box-shadow: 0 2px 8px rgba(63, 69, 81, 0.16);
     overflow: hidden;
-    border-radius: 8px;
 }
 
 .iframe-container iframe {
@@ -94,13 +31,23 @@ header p {
     top: 0;
     left: 0;
     border: none;
+    padding: 0;
+    margin: 0;
 }
 
 /* Footer */
 footer {
+    text-align: center;
     background-color: #333;
     color: #fff;
     padding: 1em 0;
-    margin-top: 2em;
-    flex-shrink: 0;
+    font-size: 0.9em;
+}
+footer a {
+    color: #fff;
+    text-decoration: none;
+}
+
+footer a:hover {
+    text-decoration: underline;
 }

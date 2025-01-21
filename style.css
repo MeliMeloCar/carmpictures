@@ -1,41 +1,72 @@
-body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
+/* Réinitialisation de marges et padding */
+* {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
 
-header {
-    background-color: #333;
+/* Mise en place d'un fond plein écran */
+html, body {
+    height: 100%;
+    width: 100%;
+    font-family: Arial, sans-serif;
+}
+
+/* Conteneur principal */
+.container {
+    height: 100vh; /* Prend toute la hauteur de l'écran */
+    width: 100%; /* Prend toute la largeur de l'écran */
+    background-color: #4CAF50; /* Changer la couleur de fond */
     color: white;
-    text-align: center;
-    padding: 20px 0;
-}
-
-h1 {
-    margin: 0;
-}
-
-h2 {
-    color: #333;
-}
-
-.gallery {
     display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
-    justify-content: center;
+    justify-content: center; /* Centre le contenu horizontalement */
+    align-items: center; /* Centre le contenu verticalement */
+    flex-direction: column;
 }
 
-.gallery img {
-    width: 300px;
-    height: 200px;
-    object-fit: cover;
-}
-
-footer {
+/* Style du texte */
+h1 {
+    font-size: 3rem; /* Taille du titre */
     text-align: center;
-    padding: 10px 0;
-    background-color: #333;
+}
+
+p {
+    font-size: 1.5rem; /* Taille du texte */
+    text-align: center;
+}
+/* Réinitialisation de marges et padding */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Mise en place d'un fond plein écran */
+html, body {
+    height: 100%;
+    width: 100%;
+    font-family: Arial, sans-serif;
+}
+
+/* Conteneur principal */
+.container {
+    height: 100vh; /* Prend toute la hauteur de l'écran */
+    width: 100%; /* Prend toute la largeur de l'écran */
+    background-color: #4CAF50; /* Changer la couleur de fond */
     color: white;
+    display: flex;
+    justify-content: center; /* Centre le contenu horizontalement */
+    align-items: center; /* Centre le contenu verticalement */
+    flex-direction: column;
+}
+
+/* Style du texte */
+h1 {
+    font-size: 3rem; /* Taille du titre */
+    text-align: center;
+}
+
+p {
+    font-size: 1.5rem; /* Taille du texte */
+    text-align: center;
 }

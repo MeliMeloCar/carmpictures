@@ -5,93 +5,50 @@
     box-sizing: border-box;
 }
 
-/* Mise en place de l'arrière-plan plein écran */
-html, body {
-    height: 100%;
-    width: 100%;
+/* Style général du corps du document */
+body {
     font-family: Arial, sans-serif;
-}
-
-/* Section principale en plein écran */
-.hero {
-    height: 100vh; /* Pleine hauteur de l'écran */
-    width: 100%;   /* Pleine largeur de l'écran */
-    background-image: url('https://via.placeholder.com/1500'); /* Remplace par ton image de fond */
-    background-size: cover;
-    background-position: center;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    color: white;
-}
-
-/* Contenu centré dans la section */
-.content {
-    max-width: 800px;
-    padding: 20px;
-}
-
-/* Titre */
-h1 {
-    font-size: 3rem; /* Taille du titre */
-    margin-bottom: 20px;
-    font-weight: bold;
-    text-transform: uppercase;
-}
-
-/* Texte descriptif */
-p {
-    font-size: 1.5rem; /* Taille du texte */
-    margin-bottom: 40px;
-}
-
-/* Bouton d'appel à l'action */
-.button {
-    padding: 15px 30px;
-    background-color: #fff;
+    background-color: #f0f0f0;
     color: #333;
-    font-size: 1.2rem;
+}
+
+/* Conteneur de l'iframe */
+.iframe-container {
+    position: relative;
+    width: 100%;
+    height: 0;
+    padding-top: 56.2225%; /* Pour un ratio de 16:9 */
+    box-shadow: 0 2px 8px rgba(63, 69, 81, 0.16);
+    margin-top: 1.6em;
+    margin-bottom: 1.6em;
+    overflow: hidden;
+    border-radius: 8px;
+}
+
+/* L'iframe lui-même */
+.iframe-container iframe {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    border: none;
+    padding: 0;
+    margin: 0;
+}
+
+/* Style pour le lien vers Canva */
+.credit {
+    text-align: center;
+    margin-top: 1em;
+    font-size: 1rem;
+}
+
+.credit a {
+    color: #0066cc;
     text-decoration: none;
-    border-radius: 5px;
-    transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-.button:hover {
-    background-color: #333;
-    color: white;
-}
-
-/* Section portfolio */
-.portfolio {
-    padding: 50px 20px;
-    background-color: #f8f8f8;
-    text-align: center;
-}
-
-.portfolio h2 {
-    font-size: 2.5rem;
-    margin-bottom: 20px;
-}
-
-.gallery {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-}
-
-.image img {
-    width: 300px;
-    height: 200px;
-    object-fit: cover;
-    border-radius: 10px;
-}
-
-/* Footer */
-footer {
-    text-align: center;
-    padding: 20px;
-    background-color: #333;
-    color: white;
-    margin-top: 50px;
+.credit a:hover {
+    text-decoration: underline;
 }

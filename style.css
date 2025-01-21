@@ -1,52 +1,56 @@
-/* Réinitialisation de marges et padding */
+/* Réinitialisation des marges et padding */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-/* Mise en place d'un fond plein écran */
+/* Mise en place de l'arrière-plan plein écran */
 html, body {
     height: 100%;
     width: 100%;
     font-family: Arial, sans-serif;
-    overflow: hidden; /* Empêche le défilement */
 }
 
-/* Conteneur principal */
-.container {
-    height: 100vh; /* Prend toute la hauteur de l'écran */
-    width: 100%; /* Prend toute la largeur de l'écran */
-    background-color: #4CAF50; /* Changer la couleur de fond */
-    color: white;
+/* Section principale en plein écran */
+.hero {
+    height: 100vh; /* Pleine hauteur de l'écran */
+    width: 100%;   /* Pleine largeur de l'écran */
+    background-image: url('https://via.placeholder.com/1500'); /* Image d'arrière-plan (remplace avec ton image) */
+    background-size: cover;
+    background-position: center;
     display: flex;
-    justify-content: center; /* Centre le contenu horizontalement */
-    align-items: center; /* Centre le contenu verticalement */
-    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     text-align: center;
+    color: white;
 }
 
-/* Style du titre */
+/* Contenu centré dans la section */
+.content {
+    max-width: 800px; /* Largeur maximale du texte */
+    padding: 20px;
+}
+
+/* Titre */
 h1 {
     font-size: 3rem; /* Taille du titre */
     margin-bottom: 20px;
+    font-weight: bold;
+    text-transform: uppercase;
 }
 
-/* Style du texte */
+/* Texte descriptif */
 p {
     font-size: 1.5rem; /* Taille du texte */
     margin-bottom: 40px;
 }
 
-/* Bouton de call to action */
-.cta {
-    margin-top: 30px;
-}
-
+/* Bouton d'appel à l'action */
 .button {
     padding: 15px 30px;
     background-color: #fff;
-    color: #4CAF50;
+    color: #333;
     font-size: 1.2rem;
     text-decoration: none;
     border-radius: 5px;
@@ -54,6 +58,6 @@ p {
 }
 
 .button:hover {
-    background-color: #4CAF50;
+    background-color: #333;
     color: white;
 }

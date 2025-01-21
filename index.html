@@ -5,31 +5,30 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mon Site - Carmelo Mosca</title>
     <link rel="stylesheet" href="style.css">
-    <script>
-        // Fonction pour entrer en plein écran automatiquement
-        function enterFullScreen() {
-            if (document.documentElement.requestFullscreen) {
-                document.documentElement.requestFullscreen();
-            } else if (document.documentElement.mozRequestFullScreen) { // Firefox
-                document.documentElement.mozRequestFullScreen();
-            } else if (document.documentElement.webkitRequestFullscreen) { // Chrome, Safari, Opera
-                document.documentElement.webkitRequestFullscreen();
-            } else if (document.documentElement.msRequestFullscreen) { // IE/Edge
-                document.documentElement.msRequestFullscreen();
-            }
-        }
-
-        // Appel de la fonction lors du chargement de la page
-        window.onload = function() {
-            enterFullScreen();
-        }
-    </script>
 </head>
 <body>
-    <div class="container">
-        <h1>Bienvenue sur mon site !</h1>
-        <p>Ceci est un site personnel avec une page d'accueil en plein écran.</p>
-        <div class="cta">
+    <div class="hero">
+        <div class="content">
+            <h1>Carmelo Mosca</h1>
+            <p>Photographe spécialisé dans le style urbain et les voyages</p>
+            <a href="#portfolio" class="button">Voir mon portfolio</a>
+        </div>
+    </div>
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mon Site - Carmelo Mosca</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="hero">
+        <div class="content">
+            <h1>Carmelo Mosca</h1>
+            <p>Photographe spécialisé dans le style urbain et les voyages</p>
             <a href="#portfolio" class="button">Voir mon portfolio</a>
         </div>
     </div>

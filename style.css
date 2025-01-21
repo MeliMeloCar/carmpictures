@@ -10,42 +10,7 @@ html, body {
     height: 100%;
     width: 100%;
     font-family: Arial, sans-serif;
-}
-
-/* Conteneur principal */
-.container {
-    height: 100vh; /* Prend toute la hauteur de l'écran */
-    width: 100%; /* Prend toute la largeur de l'écran */
-    background-color: #4CAF50; /* Changer la couleur de fond */
-    color: white;
-    display: flex;
-    justify-content: center; /* Centre le contenu horizontalement */
-    align-items: center; /* Centre le contenu verticalement */
-    flex-direction: column;
-}
-
-/* Style du texte */
-h1 {
-    font-size: 3rem; /* Taille du titre */
-    text-align: center;
-}
-
-p {
-    font-size: 1.5rem; /* Taille du texte */
-    text-align: center;
-}
-/* Réinitialisation de marges et padding */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-/* Mise en place d'un fond plein écran */
-html, body {
-    height: 100%;
-    width: 100%;
-    font-family: Arial, sans-serif;
+    overflow: hidden; /* Empêche le défilement */
 }
 
 /* Conteneur principal */

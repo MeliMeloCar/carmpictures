@@ -5,6 +5,25 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mon Site</title>
     <link rel="stylesheet" href="style.css">
+    <script>
+        // Fonction pour entrer en plein écran automatiquement
+        function enterFullScreen() {
+            if (document.documentElement.requestFullscreen) {
+                document.documentElement.requestFullscreen();
+            } else if (document.documentElement.mozRequestFullScreen) { // Firefox
+                document.documentElement.mozRequestFullScreen();
+            } else if (document.documentElement.webkitRequestFullscreen) { // Chrome, Safari and Opera
+                document.documentElement.webkitRequestFullscreen();
+            } else if (document.documentElement.msRequestFullscreen) { // IE/Edge
+                document.documentElement.msRequestFullscreen();
+            }
+        }
+
+        // Appel de la fonction lors du chargement de la page
+        window.onload = function() {
+            enterFullScreen();
+        }
+    </script>
 </head>
 <body>
     <div class="container">

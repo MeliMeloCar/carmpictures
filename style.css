@@ -21,13 +21,13 @@ body, html {
 .container {
     position: relative;
     display: flex;
-    justify-content: flex-start; /* Aligner à gauche */
-    align-items: center; /* Aligner verticalement au centre */
     flex-direction: column;
-    width: 80%; /* Largeur de 80% de la page */
-    height: 80%; /* Hauteur de 80% de la page */
-    max-width: 1200px; /* Limite la largeur de l'ensemble */
-    max-height: 800px; /* Limite la hauteur de l'ensemble */
+    justify-content: flex-start; /* Aligner l'image et le texte en haut */
+    align-items: center; /* Centrer le texte */
+    width: 100%;
+    max-width: 1200px; /* Limite la largeur du conteneur */
+    padding-left: 10vw; /* Applique 10% d'espace à gauche */
+    text-align: center; /* Centre le texte */
 }
 
 /* Image qui ajuste sa taille selon la taille de la fenêtre */
@@ -36,21 +36,6 @@ body, html {
     max-width: 800px; /* Limite la taille maximale de l'image */
     height: auto; /* Pour garder le ratio */
     margin-bottom: 20px; /* Espace entre l'image et le texte */
-    opacity: 0;
-    transform: translateY(50px);
-    animation: fadeInUp 1.5s forwards;
-}
-
-/* Animation pour l'apparition de l'image */
-@keyframes fadeInUp {
-    0% {
-        opacity: 0;
-        transform: translateY(50px);
-    }
-    100% {
-        opacity: 1;
-        transform: translateY(0);
-    }
 }
 
 /* Style du texte */
@@ -58,7 +43,6 @@ h1 {
     font-size: 5vw; /* Le texte occupe 5% de la largeur de la fenêtre */
     color: #ffffff; /* Couleur du texte */
     font-weight: bold;
-    text-align: center;
     animation: fadeInText 2s ease-out forwards;
 }
 

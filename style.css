@@ -27,6 +27,7 @@ body, html {
     align-items: center;
     width: 100%;
     height: 100%;
+    min-width: 1000px; /* Définir une largeur minimale pour que la mise en page ne se brise pas */
 }
 
 /* Animation de l'image */
@@ -77,4 +78,40 @@ h1 {
         transform: translateX(0);
         opacity: 1;
     }
+}
+
+/* Footer (par exemple, ajout d'un footer) */
+#footer {
+    height: 90px;
+    text-align: center;
+    clear: both;
+}
+
+/* Fixer les éléments en haut de la page (comme l'exemple donné) */
+#entete {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 90px;
+    background-image: url(images/css/be.jpg);
+    z-index: 10; /* Assurez-vous que l'entête soit au-dessus des autres éléments */
+}
+
+/* Fixer le menu en dessous de l'entête */
+#menu {
+    position: fixed;
+    top: 89px;
+    width: 100%;
+    height: 50px;
+    background-image: url(images/css/bm.jpg);
+    z-index: 5; /* Assurez-vous que le menu soit sous l'entête mais au-dessus du contenu */
+    text-align: center;
+}
+
+/* Contenu principal */
+#content {
+    margin-top: 140px;
+    width: 100%;
+    position: relative;
 }

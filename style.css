@@ -14,29 +14,29 @@ body, html {
     align-items: center;
     background-color: rgb(14, 10, 10); /* Couleur de fond */
     font-family: 'Dream Avenue', sans-serif;
+    overflow: hidden; /* Éviter tout débordement */
 }
 
 /* Conteneur principal */
 .container {
-    width: 90%; /* Largeur du conteneur relative à la fenêtre (90%) */
-    max-width: 1200px; /* Largeur maximale pour ne pas trop agrandir sur des écrans larges */
+    width: 90%; /* Largeur relative à la fenêtre */
+    max-width: 1200px; /* Largeur maximale pour ne pas trop agrandir */
+    height: auto;
     margin: auto; /* Centrer horizontalement */
     position: relative;
-    text-align: left; /* Aligner le texte à gauche */
-    height: auto;
 }
 
 /* Animation de l'image */
 .image-animation {
-    width: 70%; /* L'image occupe 70% de la largeur du conteneur */
+    width: 40%; /* Taille relative pour qu'elle s'adapte à l'écran */
     height: auto; /* Respecter le ratio d'aspect de l'image */
     opacity: 0;
     transform: translateY(50px);
     animation: fadeInUp 1.5s forwards;
     position: absolute;
-    left: 5%; /* Ajout d'une marge de 5% à gauche */
-    top: 50%; /* Centrer verticalement dans le conteneur */
-    transform: translateY(-50%); /* Ajuster pour l'alignement centré vertical */
+    left: 10%; /* Positionnée à 10% de la gauche de l'écran */
+    top: 50%; /* Centrer verticalement */
+    transform: translateY(-50%); /* Ajustement pour aligner verticalement */
 }
 
 /* Animation pour faire apparaître l'image de bas en haut */
@@ -58,9 +58,9 @@ h1 {
     margin: 0; /* Retirer les marges inutiles */
     animation: fadeInText 2s ease-out forwards;
     position: absolute;
-    left: 75%; /* Ajusté pour positionner le texte à droite de l'image avec une marge */
-    top: 50%; /* Aligné au centre vertical de l'image */
-    transform: translateY(-50%); /* Ajustement vertical */
+    left: 50%; /* Centrer horizontalement dans la fenêtre */
+    top: 50%; /* Aligné au centre vertical de l'écran */
+    transform: translate(-50%, -50%); /* Centrage parfait horizontalement et verticalement */
     white-space: nowrap; /* Éviter que le texte se coupe en plusieurs lignes */
 }
 

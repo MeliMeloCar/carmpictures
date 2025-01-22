@@ -12,7 +12,7 @@ body, html {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: rgb(14, 10, 10); /* Couleur de fond modifiée */
+    background-color: rgb(14, 10, 10); /* Couleur de fond */
 }
 
 /* Conteneur principal */
@@ -29,8 +29,8 @@ body, html {
     transform: translateY(50px);
     animation: fadeInUp 1.5s forwards;
     position: absolute;
-    left: 50%; /* Centrer horizontalement */
-    transform: translateX(-50%) translateY(50px); /* Décalage pour centrer et animer verticalement */
+    left: 25%; /* Positionner à 25% de la largeur du viewport (entre gauche et centre) */
+    transform: translateX(-25%) translateY(50px); /* Décalage pour animer et centrer verticalement */
 }
 
 /* Animation pour faire apparaître l'image de bas en haut */
@@ -50,5 +50,5 @@ h1 {
     font-size: 74.5px;
     font-family: 'Dream Avenue', sans-serif;
     margin-top: 20px;
-    color: #ffffff; /* Changer la couleur du texte en blanc pour contraste */
+    color: #ffffff; /* Couleur du texte */
 }

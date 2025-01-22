@@ -3,37 +3,35 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio de Carmelo Mosca</title>
+    <title>Portfolio Carmelo Mosca</title>
     <style>
-        /* Général reset des marges et padding */
+        /* Style général reset des marges et padding */
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
 
-        /* Page en pleine largeur et hauteur */
+        /* Pour que le site occupe toute la hauteur et largeur */
         html, body {
             height: 100%;
             width: 100%;
             margin: 0;
             padding: 0;
-            overflow-x: hidden;
+            overflow: hidden;
+            font-family: Arial, sans-serif;
         }
 
-        /* Conteneur de l'iframe avec animation */
+        /* Conteneur de l'iframe avec animation de fondu */
         .iframe-container {
             position: relative;
             width: 100%;
             height: 100vh;
-            padding-top: 56.2225%;
             overflow: hidden;
-            margin: 0;
-            border-radius: 8px;
-            animation: fadeIn 1.5s ease-in-out forwards;
+            animation: fadeIn 2s ease-out;
         }
 
-        /* Animation de fondu d'entrée */
+        /* Animation de fondu */
         @keyframes fadeIn {
             0% {
                 opacity: 0;
@@ -43,20 +41,18 @@
             }
         }
 
-        /* Style de l'iframe */
-        iframe {
+        /* Animation de glissement (page glissant de bas en haut) */
+        .iframe {
             position: absolute;
             width: 100%;
             height: 100%;
-            top: 0;
+            top: 100%;
             left: 0;
             border: none;
-            padding: 0;
-            margin: 0;
             animation: slideIn 1s ease-out forwards;
         }
 
-        /* Animation de glissement (comme la transition dans Canva) */
+        /* Glissement de bas en haut */
         @keyframes slideIn {
             0% {
                 transform: translateY(100%);
@@ -72,9 +68,19 @@
             text-align: center;
             font-size: 16px;
             color: #000;
-            padding-top: 20px;
             text-decoration: none;
-            font-family: Arial, sans-serif;
+            margin-top: 20px;
+        }
+
+        /* Pour rendre la page responsive sur mobile */
+        @media (max-width: 768px) {
+            .iframe-container {
+                height: 100vh; /* Fullscreen sur mobile */
+            }
+
+            .iframe {
+                height: 100vh; /* Toujours plein écran sur mobile */
+            }
         }
     </style>
 </head>
@@ -82,19 +88,22 @@
 
     <!-- Conteneur avec animation de fondu et glissement -->
     <div class="iframe-container">
-        <iframe src="https://www.canva.com/design/DAGa_NCoaCY/QyTNa3AUINkKCP5YY3V88A/view?embed" 
+        <iframe class="iframe" src="https://www.canva.com/design/DAGa_NCoaCY/QyTNa3AUINkKCP5YY3V88A/view?embed" 
                 loading="lazy" 
                 allowfullscreen="allowfullscreen" 
                 allow="fullscreen">
         </iframe>
     </div>
 
-    <!-- Lien pour retourner sur Canva -->
+    <!-- Lien retour vers Canva -->
     <a href="https://www.canva.com/design/DAGa_NCoaCY/QyTNa3AUINkKCP5YY3V88A/view?utm_content=DAGa_NCoaCY&utm_campaign=designshare&utm_medium=embeds&utm_source=link" 
        target="_blank" 
        rel="noopener">
         Carmelo Mosca par Carmélo Mosca
     </a>
 
+    <script>
+        // Si tu veux ajouter des transitions dynamiques supplémentaires avec JavaScript, tu peux ici.
+    </script>
 </body>
 </html>

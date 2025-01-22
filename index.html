@@ -16,23 +16,29 @@
         html, body {
             height: 100%;
             overflow-x: hidden; /* Empêche le défilement horizontal */
+            font-family: Arial, sans-serif;
         }
 
-        /* Conteneur pour les images SVG */
+        /* Conteneur principal pour scroller */
         .svg-container {
             display: flex;
             flex-direction: column;
             align-items: center;
-            justify-content: center;
+            justify-content: flex-start;
             width: 100%;
-            height: auto;
-            overflow-y: scroll; /* Permet de faire défiler les SVGs */
+            min-height: 100vh;  /* Assure que le container prend toute la hauteur de la fenêtre */
+            overflow-y: auto;   /* Permet de scroller verticalement */
         }
 
-        .svg-container svg {
-            width: 100%;
-            max-width: 1000px;  /* Ajuste à ta taille préférée */
-            margin-bottom: 20px; /* Espace entre les SVGs */
+        .svg-container object, .svg-container img {
+            width: 100%;          /* Ajuste la taille des SVGs en fonction de la largeur de la fenêtre */
+            max-width: 1200px;    /* Largeur maximale de chaque SVG */
+            margin-bottom: 20px;  /* Espace entre les pages SVG */
+        }
+
+        /* Optionnel : Ajoute un peu de style pour le fond */
+        body {
+            background-color: #f5f5f5;
         }
     </style>
 </head>
@@ -40,9 +46,14 @@
 <body>
     <!-- Conteneur pour les fichiers SVG -->
     <div class="svg-container">
+        <!-- Intégration de la première page SVG -->
         <object type="image/svg+xml" data="1.svg" aria-label="Page 1 du design Canva"></object>
+        
+        <!-- Intégration de la deuxième page SVG -->
         <object type="image/svg+xml" data="2.svg" aria-label="Page 2 du design Canva"></object>
-        <!-- Ajoute d'autres pages SVG ici -->
+
+        <!-- Tu peux ajouter plus de pages SVG si nécessaire -->
+        <!-- <object type="image/svg+xml" data="3.svg" aria-label="Page 3 du design Canva"></object> -->
     </div>
 </body>
 </html>

@@ -21,42 +21,58 @@ body {
 #page1 {
     flex: 1;
     display: flex;
-    flex-direction: column;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
     background-color: #f7f7f7;
     transition: background-color 0.3s ease;
     padding: 20px;
 }
 
+/* Conteneur de l'image */
+.left-container {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 #image1 {
-    max-width: 100%;
+    max-width: 80%;
     height: auto;
     border-radius: 8px;
     transition: transform 0.3s ease-in-out;
 }
 
-#page1 .text-container {
-    text-align: center;
-    color: #333;
-    margin-top: 20px;
+/* Conteneur du texte */
+.right-container {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 20px;
 }
 
 #page1 h1 {
-    font-size: 2rem;
+    font-family: 'Dream Avenue', sans-serif;
+    font-size: 74.5px; /* Taille de la police */
     color: #333;
+    margin-bottom: 20px;
+    opacity: 0;
+    animation: fadeInUp 2s forwards;
 }
 
 #page1 p {
     font-size: 1.2rem;
     color: #777;
+    opacity: 0;
+    animation: fadeInUp 2s 0.5s forwards;
 }
 
-/* Section 2 (quand on scrolle) */
+/* Section 2 */
 #page2 {
     flex: 1;
     display: flex;
-    flex-direction: column;
     justify-content: center;
     align-items: center;
     background-color: #fff;
@@ -69,25 +85,16 @@ body {
 }
 
 #page2 h1 {
-    font-size: 2rem;
+    font-size: 2.5rem;
     color: #333;
 }
 
 #page2 p {
-    font-size: 1.2rem;
+    font-size: 1.5rem;
     color: #777;
 }
 
-/* Animations */
-#page1 img:hover {
-    transform: scale(1.05);
-}
-
-#page1 .text-container h1, #page1 .text-container p {
-    opacity: 0;
-    animation: fadeInUp 2s forwards;
-}
-
+/* Animation */
 @keyframes fadeInUp {
     from {
         opacity: 0;
@@ -101,16 +108,31 @@ body {
 
 /* Responsivité */
 @media (max-width: 768px) {
+    #page1 {
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .left-container, .right-container {
+        width: 100%;
+        padding: 10px;
+    }
+
     #page1 h1 {
-        font-size: 1.5rem;
+        font-size: 2rem;
     }
 
     #page1 p {
         font-size: 1rem;
     }
 
+    #image1 {
+        max-width: 100%;
+        height: auto;
+    }
+
     #page2 h1 {
-        font-size: 1.5rem;
+        font-size: 2rem;
     }
 
     #page2 p {

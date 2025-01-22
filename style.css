@@ -18,15 +18,19 @@ body, html {
 /* Conteneur principal */
 .container {
     text-align: center;
+    position: relative;
 }
 
 /* Animation de l'image */
 .image-animation {
-    width: 100%;
-    max-width: 800px;
+    width: 110%; /* Augmenter la taille de l'image de 10% */
+    max-width: 880px; /* 10% de plus que la taille précédente */
     opacity: 0;
     transform: translateY(50px);
     animation: fadeInUp 1.5s forwards;
+    position: absolute;
+    left: 50%; /* Centrer horizontalement */
+    transform: translateX(-50%) translateY(50px); /* Décalage pour centrer et animer verticalement */
 }
 
 /* Animation pour faire apparaître l'image de bas en haut */

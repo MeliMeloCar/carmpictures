@@ -24,7 +24,7 @@ body, html {
     left: 10vw; /* Positionne l'image à 10% de la largeur de la fenêtre */
     top: 50%; /* Centre verticalement la container */
     transform: translateY(-50%); /* Ajuste le centrage vertical */
-    text-align: center; /* Centre le texte */
+    text-align: center; /* Centre le texte horizontalement */
     display: flex;
     flex-direction: column;
     align-items: center;

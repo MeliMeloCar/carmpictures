@@ -1,53 +1,127 @@
-/* Reset général pour enlever les marges et paddings par défaut */
-* {
+/* Général */
+body, html {
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
+    height: 100%;
+    overflow-x: hidden; /* Empêcher les défilements horizontaux */
+    font-family: 'Arial', sans-serif;
 }
 
-/* Style général du body */
-body {
-    font-family: Arial, sans-serif;
-    height: 100vh; /* La hauteur totale de la fenêtre */
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-}
-
-/* Style de l'iframe */
-.iframe-container {
-    position: relative;
+.page {
     width: 100%;
-    height: 100vh; /* L'iframe prend toute la hauteur de l'écran */
-    margin: 0;
-    box-shadow: 0 2px 8px rgba(63, 69, 81, 0.16);
+    height: 100vh; /* Chaque page prend la pleine hauteur de l'écran */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
     overflow: hidden;
+    opacity: 0; /* On commence avec les pages invisibles */
+    animation: fadeIn 1s forwards; /* Animation de fade-in */
 }
 
-.iframe-container iframe {
-    position: absolute;
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+/* Contenu centré */
+.content {
+    position: relative;
+    text-align: center;
+}
+
+.image {
     width: 100%;
     height: 100%;
+    object-fit: cover; /* Remplir toute la surface sans déformation */
+    position: absolute;
     top: 0;
     left: 0;
-    border: none;
-    padding: 0;
+}
+
+.text-container {
+    position: absolute;
+    top: 20%; /* Ajuster la position du texte */
+    left: 50%;
+    transform: translateX(-50%);
+    color: white;
+    text-shadow: 0 2px 5px rgba(0, 0, 0, 0.6);
+    z-index: 1; /* Assurer que le texte reste au-dessus de l'image */
+}
+
+.title {
+    font-size: 3em;
     margin: 0;
+    animation: slideInFromTop 1s ease-out forwards;
 }
 
-/* Footer */
-footer {
-    text-align: center;
-    background-color: #333;
-    color: #fff;
-    padding: 1em 0;
-    font-size: 0.9em;
+.description {
+    font-size: 1.5em;
+    margin-top: 10px;
+    animation: slideInFromBottom 1.5s ease-out forwards;
 }
-footer a {
-    color: #fff;
+
+.button {
+    font-size: 1.2em;
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #ff7f00;
+    color: white;
     text-decoration: none;
+    border-radius: 5px;
+    animation: fadeInButton 2s ease-out forwards;
 }
 
-footer a:hover {
-    text-decoration: underline;
+/* Animation pour les titres et descriptions */
+@keyframes slideInFromTop {
+    from {
+        transform: translateY(-50px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes slideInFromBottom {
+    from {
+        transform: translateY(50px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes fadeInButton {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* Pages successives */
+#page1 {
+    background-color: #1a1a1a; /* Fond sombre */
+}
+
+#page2 {
+    background-color: #333; /* Fond plus clair */
+}
+
+/* Pour les petits écrans (téléphones) */
+@media (max-width: 768px) {
+    .title {
+        font-size: 2em;
+    }
+    .description {
+        font-size: 1.2em;
+    }
+    .button {
+        font-size: 1em;
+    }
 }

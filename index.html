@@ -1,40 +1,20 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Portfolio - Carmelo Mosca</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Carmpictures</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="page">
-        <div class="left-container">
-            <img src="Carmelo Mosca.png" alt="Carmelo Mosca" class="image1">
-        </div>
-        <div class="right-container">
-            <h1>Carmelo Mosca</h1>
-            <p>Photographe & Créateur de contenu</p>
-        </div>
+  <div class="container">
+    <div class="image-wrapper">
+      <img src="carmelo mosca.png" alt="Carmelo Mosca" class="image">
     </div>
-    
-    <script>
-        // Javascript pour observer le scroll et déclencher la transition au défilement
-        document.addEventListener("DOMContentLoaded", function () {
-            const pages = document.querySelectorAll('.page');
-            const checkVisibility = () => {
-                pages.forEach(page => {
-                    const rect = page.getBoundingClientRect();
-                    if (rect.top >= 0 && rect.bottom <= window.innerHeight) {
-                        page.classList.add('visible');
-                    } else {
-                        page.classList.remove('visible');
-                    }
-                });
-            };
-            window.addEventListener('scroll', checkVisibility);
-            checkVisibility(); // Appel initial
-        });
-    </script>
+    <div class="text-wrapper">
+      <h1>Carmelo Mosca</h1>
+      <p>Photographe et créateur</p>
+    </div>
+  </div>
 </body>
 </html>

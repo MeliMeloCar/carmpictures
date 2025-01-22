@@ -7,39 +7,36 @@
 
 /* Style du body */
 body, html {
-    width: 100%; /* Le body occupe toujours 100% de la largeur de la fenêtre */
-    height: 100%; /* Le body occupe 100% de la hauteur de la fenêtre */
+    width: 100%; /* Toujours 100% de la largeur de la fenêtre */
+    height: 100%; /* Toujours 100% de la hauteur de la fenêtre */
     display: flex;
     justify-content: center;
     align-items: center;
     background-color: rgb(14, 10, 10); /* Couleur de fond */
     font-family: 'Dream Avenue', sans-serif;
-    overflow: hidden; /* Éviter tout débordement */
+    overflow: hidden; /* Éviter les débordements */
 }
 
 /* Conteneur principal */
 .container {
-    width: 90%; /* Largeur relative à la fenêtre */
-    max-width: 1200px; /* Largeur maximale pour ne pas trop agrandir */
+    width: 90vw; /* Largeur relative pour que tout s'adapte */
     height: auto;
-    margin: auto; /* Centrer horizontalement */
     position: relative;
 }
 
-/* Animation de l'image */
+/* Image "Carmelo Mosca.png" */
 .image-animation {
-    width: 40%; /* Taille relative pour qu'elle s'adapte à l'écran */
-    height: auto; /* Respecter le ratio d'aspect de l'image */
-    opacity: 0;
-    transform: translateY(50px);
-    animation: fadeInUp 1.5s forwards;
+    width: 70%; /* Taille relative pour qu'elle reste grande */
+    max-width: 1000px; /* Taille maximale */
+    height: auto; /* Respecte le ratio de l'image */
     position: absolute;
-    left: 10%; /* Positionnée à 10% de la gauche de l'écran */
-    top: 50%; /* Centrer verticalement */
-    transform: translateY(-50%); /* Ajustement pour aligner verticalement */
+    left: 10%; /* Position à 10% de la gauche */
+    top: 50%; /* Centrée verticalement */
+    transform: translateY(-50%); /* Ajustement pour l'alignement */
+    animation: fadeInUp 1.5s forwards;
 }
 
-/* Animation pour faire apparaître l'image de bas en haut */
+/* Animation de l'image (apparition de bas en haut) */
 @keyframes fadeInUp {
     0% {
         opacity: 0;
@@ -51,20 +48,19 @@ body, html {
     }
 }
 
-/* Style du texte */
+/* Texte "Carmelo Mosca" */
 h1 {
-    font-size: 5vw; /* Taille dynamique basée sur la largeur de la fenêtre */
-    color: #ffffff; /* Couleur du texte */
-    margin: 0; /* Retirer les marges inutiles */
-    animation: fadeInText 2s ease-out forwards;
+    font-size: 5vw; /* Taille relative pour qu'il s'adapte au zoom/dézoom */
+    color: #ffffff;
     position: absolute;
-    left: 50%; /* Centrer horizontalement dans la fenêtre */
-    top: 50%; /* Aligné au centre vertical de l'écran */
-    transform: translate(-50%, -50%); /* Centrage parfait horizontalement et verticalement */
-    white-space: nowrap; /* Éviter que le texte se coupe en plusieurs lignes */
+    left: 50%; /* Centré horizontalement */
+    top: 50%; /* Aligner verticalement avec le haut de l'image */
+    transform: translate(-50%, -50%); /* Centrage parfait */
+    white-space: nowrap; /* Empêcher le retour à la ligne */
+    animation: fadeInText 2s ease-out forwards;
 }
 
-/* Animation du texte pour qu'il apparaisse de gauche à droite */
+/* Animation du texte (apparition de gauche à droite) */
 @keyframes fadeInText {
     0% {
         transform: translateX(-100%);
@@ -75,3 +71,12 @@ h1 {
         opacity: 1;
     }
 }
+
+/* Responsiveness : le texte et l'image grandissent/retrécissent ensemble */
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transform: scale(calc(100vw / 1440)); /* Ajuste tout selon la largeur de la fenêtre */
+    transform-origin: top left; /* Point d'origine pour les transformations */

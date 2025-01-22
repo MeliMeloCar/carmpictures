@@ -38,17 +38,23 @@ p {
     justify-content: center;
     align-items: center;
     padding: 0 20px;
+    position: relative;
+    overflow: hidden;
 }
 
 .image1 {
-    max-width: 80%; /* L'image prend 80% de la largeur */
+    max-width: 100%; /* Image en plein écran */
     height: auto;
     object-fit: cover;
-    transition: transform 1s ease-in-out;
+    position: absolute;
+    transform: translateY(100px); /* Position initiale en bas */
+    opacity: 0;
+    transition: transform 1s ease-out, opacity 1s ease-out; /* Animation de montée */
 }
 
 .page.visible .image1 {
-    transform: scale(1.05); /* L'image s'agrandit au moment où la page devient visible */
+    transform: translateY(0); /* L'image monte quand la page devient visible */
+    opacity: 1; /* L'image devient visible */
 }
 
 /* Container for Text */
@@ -59,15 +65,17 @@ p {
     justify-content: center;
     align-items: flex-start;
     padding: 20px;
+    position: relative;
+    overflow: hidden;
 }
 
 .right-container h1,
 .right-container p {
     opacity: 0;
-    animation: fadeIn 2s forwards;
+    animation: fadeIn 1s forwards 0.5s; /* L'animation du texte démarre avec un délai */
 }
 
-/* Animation de Fade-in */
+/* Animation de Fade-in pour le texte */
 @keyframes fadeIn {
     0% {
         opacity: 0;
@@ -83,5 +91,6 @@ p {
 @media (max-width: 768px) {
     .image1 {
         max-width: 100%;
+        height: auto;
     }
 }

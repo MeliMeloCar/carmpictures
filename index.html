@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Carmelo Mosca - Portfolio</title>
     <style>
         @font-face {
@@ -35,6 +35,13 @@
                 scale -= 0.1;
             }
             scale = Math.max(0.5, Math.min(scale, 2)); // Limiter l'échelle
+            adjustScale();
+        });
+
+        // Surveiller le zoom de la page via la modification de la taille de la fenêtre
+        window.addEventListener('resize', function() {
+            const scaleFactor = window.innerWidth / 1000; // Utiliser la largeur de la fenêtre pour ajuster l'échelle
+            scale = Math.min(Math.max(0.5, scaleFactor), 2); // Limiter l'échelle entre 0.5 et 2
             adjustScale();
         });
     </script>

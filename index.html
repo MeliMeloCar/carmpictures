@@ -25,14 +25,16 @@
     <script>
         let scale = 1;
 
-        // Surveiller le zoom de la page via la modification de la taille de la fenêtre
+        // Surveiller les changements de taille de la fenêtre et ajuster l'échelle
         window.addEventListener('resize', function() {
-            const scaleFactor = window.innerWidth / 1000; // Utiliser la largeur de la fenêtre pour ajuster l'échelle
-            scale = Math.min(Math.max(0.5, scaleFactor), 2); // Limiter l'échelle entre 0.5 et 2
+            // Utiliser un facteur de mise à l'échelle plus contrôlé
+            const scaleFactor = window.innerWidth / 1000; // Calcul basé sur la taille de la fenêtre
+            scale = Math.min(Math.max(0.5, scaleFactor), 1.5); // Limiter l'échelle entre 0.5 et 1.5
             adjustScale();
         });
 
         function adjustScale() {
+            // Appliquer l'échelle au conteneur principal
             document.querySelector('.container').style.transform = `scale(${scale})`;
         }
     </script>

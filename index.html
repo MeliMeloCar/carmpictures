@@ -25,5 +25,24 @@
             <h1>Carmelo Mosca</h1>
         </div>
     </div>
+
+    <script>
+        let scale = 1;
+        // Fonction pour ajuster l'échelle de l'image et du texte
+        function adjustScale() {
+            document.querySelector('.container').style.transform = `scale(${scale})`;
+        }
+
+        // Événements pour zoomer et dézoomer
+        window.addEventListener('wheel', function(event) {
+            if (event.deltaY < 0) { // Zoom
+                scale += 0.1;
+            } else { // Dézoom
+                scale -= 0.1;
+            }
+            scale = Math.max(0.5, Math.min(scale, 2)); // Limiter l'échelle
+            adjustScale();
+        });
+    </script>
 </body>
 </html>

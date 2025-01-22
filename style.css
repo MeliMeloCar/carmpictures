@@ -52,7 +52,7 @@ body, html {
 
 /* Style du texte */
 h1 {
-    font-size: 7vw; /* Utilisation de la largeur en viewport pour que le texte s'adapte */
+    font-size: 10vw; /* Utilisation de la largeur en viewport pour que le texte s'adapte */
     color: #ffffff; /* Couleur du texte */
     animation: fadeInText 2s ease-out forwards;
     position: absolute;

@@ -5,14 +5,6 @@
     box-sizing: border-box;
 }
 
-/* Définir la police locale Dream Avenue */
-@font-face {
-    font-family: 'Dream Avenue';
-    src: url('FontsFree-Net-Dream-Avenue.ttf') format('truetype');
-    font-weight: normal;
-    font-style: normal;
-}
-
 /* Style du body et du conteneur */
 body, html {
     height: 100%;
@@ -57,28 +49,29 @@ body, html {
 }
 
 /* Style du texte */
+h1 {
+    font-size: 74.5px;
+    font-family: 'Dream Avenue', sans-serif;
+    margin-top: 20px;
+    color: #ffffff; /* Couleur du texte */
+}
+
+/* Conteneur du texte avec animation de droite à gauche */
 .text-container {
     position: absolute;
-    top: 20%; /* Positionner le texte à 20% du haut de l'écran, aligné avec le début de l'image */
-    left: 10%;  /* Positionner le texte à 10% de la largeur de l'écran */
+    top: 20%; /* Aligner le texte avec le début de l'image */
+    right: 10%;  /* Placer le texte à droite de l'image */
     animation: textSlideIn 2s ease-out forwards;
 }
 
-/* Animation pour faire apparaître le texte de gauche à droite */
+/* Animation de l'apparition du texte de gauche à droite */
 @keyframes textSlideIn {
     0% {
-        transform: translateX(-100%); /* Début hors de l'écran à gauche */
+        transform: translateX(100%);
         opacity: 0;
     }
     100% {
         transform: translateX(0);
         opacity: 1;
     }
-}
-
-/* Style du texte */
-h1 {
-    font-size: 74.5px;
-    font-family: 'Dream Avenue', sans-serif; /* Utilisation de la police locale Dream Avenue */
-    color: #ffffff; /* Couleur du texte */
 }

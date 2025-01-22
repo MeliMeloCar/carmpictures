@@ -37,7 +37,6 @@ body, html {
     animation: fadeInUp 1.5s forwards;
     position: absolute;
     left: 5vw; /* Décalage de 5% de la largeur de la fenêtre pour la laisser à gauche sans la coller */
-    transform: translateY(50px); /* Animation de l'image */
 }
 
 /* Animation pour faire apparaître l'image de bas en haut */
@@ -60,8 +59,8 @@ h1 {
     animation: fadeInText 2s ease-out forwards;
     position: absolute;
     left: 100%; /* Placer le texte juste après l'image */
-    top: 0; /* Aligner le texte avec le haut de l'image */
-    transform: translateX(20px); /* Décalage pour placer le texte à droite de l'image */
+    top: 50%; /* Centrer verticalement par rapport à l'image */
+    transform: translateX(20px) translateY(-50%); /* Décalage pour placer le texte à droite de l'image et centré verticalement */
 }
 
 /* Animation du texte pour qu'il apparaisse de gauche à droite */

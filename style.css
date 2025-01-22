@@ -15,20 +15,19 @@ body, html {
     background-color: rgb(14, 10, 10); /* Couleur de fond */
     font-family: 'Dream Avenue', sans-serif;
     overflow: hidden; /* Pour éviter tout débordement */
+    position: relative; /* Pour que les éléments enfants soient positionnés correctement */
 }
 
 /* Conteneur pour l'image et le texte */
 .container {
-    position: relative;
+    position: absolute;
+    left: 10vw; /* Positionne l'image à 10% de la largeur de la fenêtre */
+    top: 50%; /* Centre verticalement la container */
+    transform: translateY(-50%); /* Ajuste le centrage vertical */
+    text-align: center; /* Centre le texte */
     display: flex;
     flex-direction: column;
-    justify-content: flex-start; /* Aligner l'image et le texte en haut */
-    align-items: center; /* Centrer le texte horizontalement */
-    width: 100%;
-    max-width: 1200px; /* Limite la largeur du conteneur */
-    padding-left: 10vw; /* Applique 10% d'espace à gauche */
-    text-align: center; /* Centrer le texte */
-    transition: transform 0.2s ease; /* Animation fluide pour le zoom */
+    align-items: center;
 }
 
 /* Image qui ajuste sa taille selon la taille de la fenêtre */
@@ -36,7 +35,6 @@ body, html {
     width: 50vw; /* 50% de la largeur de la fenêtre */
     max-width: 800px; /* Limite la taille maximale de l'image */
     height: auto; /* Pour garder le ratio */
-    margin-bottom: 0; /* Pas d'espace entre l'image et le texte */
     transition: transform 0.2s ease; /* Douce transition pour le zoom */
 }
 
@@ -47,13 +45,10 @@ h1 {
     font-weight: bold;
     white-space: nowrap; /* Empêche le texte de passer à la ligne */
     transition: transform 0.2s ease; /* Douce transition pour le zoom */
-    position: absolute;
-    top: 0; /* Aligner le texte avec le haut de l'image */
 }
 
 /* Ajustement global pour zoom/dézoom */
 html {
-    /* Applique un zoom global */
     transform: scale(1); /* Par défaut à 100% */
     transition: transform 0.2s ease; /* Douce transition pour le zoom */
 }

@@ -1,17 +1,33 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Carmelo Mosca - Portfolio</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Carmelo Mosca</title>
+    <link rel="stylesheet" href="styles.css"> <!-- Lien vers le fichier CSS séparé -->
 </head>
 <body>
-    <div class="container">
-        <!-- Image -->
-        <img src="Carmelo Mosca.png" alt="Carmelo Mosca" class="image-animation">
-        <!-- Texte -->
-        <h1>Carmelo Mosca</h1>
-    </div>
+
+<div class="container">
+    <img src="carmelo_mosca.png" alt="Carmelo Mosca" class="image-animation">
+    <h1>Carmelo Mosca</h1>
+</div>
+
+<!-- Bouton pour tester le zoom/dézoom -->
+<button id="zoomButton">Toggle Zoom</button>
+
+<script>
+    let zoomed = false;
+
+    function toggleZoom() {
+        document.body.classList.toggle('zoomed', zoomed);
+        document.body.classList.toggle('dezoomed', !zoomed);
+        zoomed = !zoomed;
+    }
+
+    // Appeler la fonction lors de l'événement de zoom/dézoom, par exemple un bouton :
+    document.getElementById("zoomButton").addEventListener("click", toggleZoom);
+</script>
+
 </body>
 </html>

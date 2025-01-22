@@ -6,40 +6,40 @@
     font-style: normal;
 }
 
-/* Réinitialisation des marges et paddings */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-/* Style global */
 body, html {
     width: 100%;
     height: 100%;
-    overflow: hidden;
-    background-color: rgb(14, 10, 10);
+    margin: 0;
+    padding: 0;
     font-family: 'Dream Avenue', sans-serif;
+    background-color: rgb(14, 10, 10);
     display: flex;
     justify-content: center;
     align-items: center;
+    overflow: hidden;
 }
 
 /* Conteneur principal */
 .container {
     position: relative;
-    width: 80vw; /* Largeur relative pour s'adapter à l'écran */
-    max-width: 900px; /* Largeur maximale */
-    height: auto;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: flex-start; /* Aligné à gauche */
+    align-items: center;
+    transform-origin: center center; /* Pour que l'échelle commence du centre */
+    transition: transform 0.3s ease; /* Transition douce lors du zoom */
 }
 
 /* Image */
 .image-animation {
-    width: 90%; /* L'image occupe 90% de la largeur du conteneur */
-    max-width: 800px;
-    display: block;
-    margin-left: 10%; /* Décalage de 10% de la gauche */
+    width: 70vw; /* L'image occupe 70% de la largeur de la fenêtre */
+    max-width: 880px;
+    opacity: 0;
+    transform: translateY(50px);
     animation: fadeInUp 1.5s forwards;
+    position: absolute;
+    left: 10%; /* Décalage de 10% de la largeur de la fenêtre pour la laisser à gauche */
 }
 
 /* Animation de l'image */
@@ -56,15 +56,13 @@ body, html {
 
 /* Texte */
 h1 {
-    font-size: 5vh; /* Taille relative pour suivre le zoom/dézoom */
+    font-size: 5vw; /* Utilisation de la largeur en viewport pour que le texte s'adapte */
     color: #ffffff;
     position: absolute;
     top: 0; /* Aligné en haut de l'image */
     left: 50%; /* Centré horizontalement */
     transform: translateX(-50%); /* Ajustement pour centrer le texte */
     animation: fadeInText 2s ease-out forwards;
-    white-space: nowrap; /* Évite les retours à la ligne */
-    font-family: 'Dream Avenue', sans-serif; /* Utilisation explicite de la police */
 }
 
 /* Animation du texte */
@@ -77,4 +75,23 @@ h1 {
         transform: translateX(0);
         opacity: 1;
     }
+}
+
+/* Application de la mise à l'échelle du zoom/dézoom */
+html {
+    font-size: 16px; /* Taille de base du texte */
+}
+
+body {
+    transform: scale(1); /* Initial scale */
+    transition: transform 0.3s ease; /* Animation fluide */
+}
+
+/* Lors du zoom et dézoom, l'échelle de la page est appliquée */
+body.zoomed {
+    transform: scale(1.2); /* Zoom de 20% */
+}
+
+body.dezoomed {
+    transform: scale(0.8); /* Dézoom de 20% */
 }

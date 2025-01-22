@@ -21,14 +21,12 @@ body, html {
 .container {
     position: relative;
     display: flex;
-    flex-direction: column;
-    justify-content: flex-start; /* Aligner l'image et le texte en haut */
-    align-items: center; /* Centrer le texte horizontalement */
+    flex-direction: row; /* Alignement en ligne, image à gauche, texte à droite */
+    justify-content: center; /* Centrer le contenu horizontalement */
+    align-items: center; /* Centrer le contenu verticalement */
     width: 100%;
     max-width: 1200px; /* Limite la largeur du conteneur */
     padding-left: 10vw; /* Applique 10% d'espace à gauche */
-    text-align: center; /* Centrer le texte */
-    transition: transform 0.2s ease; /* Animation fluide pour le zoom */
 }
 
 /* Image qui ajuste sa taille selon la taille de la fenêtre */
@@ -36,7 +34,7 @@ body, html {
     width: 50vw; /* 50% de la largeur de la fenêtre */
     max-width: 800px; /* Limite la taille maximale de l'image */
     height: auto; /* Pour garder le ratio */
-    margin-bottom: 0; /* Pas d'espace entre l'image et le texte */
+    margin-right: 20px; /* Espace entre l'image et le texte */
     transition: transform 0.2s ease; /* Douce transition pour le zoom */
 }
 
@@ -46,9 +44,6 @@ h1 {
     color: #ffffff; /* Couleur du texte */
     font-weight: bold;
     white-space: nowrap; /* Empêche le texte de passer à la ligne */
-    position: absolute; /* Positionner le texte indépendamment */
-    top: 0; /* Aligner le texte en haut de l'image */
-    transform: translateX(-50%); /* Centrer le texte horizontalement */
     transition: transform 0.2s ease; /* Douce transition pour le zoom */
 }
 

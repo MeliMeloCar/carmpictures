@@ -11,7 +11,7 @@ body, html {
     width: 100%;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
     background-color: rgb(14, 10, 10); /* Fond noir pour donner un look élégant */
     font-family: 'TT Drugs Trial', sans-serif;
@@ -21,28 +21,27 @@ body, html {
 
 /* Header : Profil */
 header {
-    text-align: center;
-    margin-top: 50px;
-}
-
-.header-content {
     display: flex;
-    justify-content: center;
-    flex-direction: column;
-    align-items: center;
+    justify-content: flex-start; /* Place l'image et le texte à gauche */
+    align-items: flex-start; /* Aligne verticalement le texte avec l'image */
+    margin-top: 50px;
+    width: 100%;
+    max-width: 1200px; /* Limite la largeur du contenu */
+    padding: 0 20px; /* Espacement à gauche et à droite */
 }
 
 .profile-image {
-    width: 150px; /* Ajuster selon la taille de l'image */
+    width: 200px; /* Grande taille de l'image */
     height: auto;
-    border-radius: 50%;
-    border: 5px solid #ffffff;
+    border-radius: 0; /* Pas de rond, l'image reste carrée */
+    margin-right: 20px; /* Espace entre l'image et le texte */
 }
 
 h1 {
-    margin-top: 20px;
     font-size: 2rem;
     font-weight: bold;
+    margin-top: 0; /* Supprime l'espacement au-dessus du texte */
+    padding-top: 0;
 }
 
 /* Section : Liens sociaux */

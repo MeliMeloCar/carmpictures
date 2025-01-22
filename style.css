@@ -1,4 +1,4 @@
-/* General Styling */
+/* Général */
 body, html {
     margin: 0;
     padding: 0;
@@ -16,13 +16,12 @@ p {
     font-size: 20px;
 }
 
-/* Pages */
+/* Configuration des pages */
 .page {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh; /* Full screen height */
-    scroll-snap-align: start; /* Permet le défilement en snap */
+    height: 100vh; /* Pleine hauteur de l'écran */
     opacity: 0;
     transition: opacity 1s ease-in-out;
 }
@@ -31,7 +30,7 @@ p {
     opacity: 1;
 }
 
-/* Container for Image */
+/* Conteneur de l'image */
 .left-container {
     flex: 1;
     display: flex;
@@ -43,13 +42,12 @@ p {
 }
 
 .image1 {
-    max-width: 100%; /* Image en plein écran */
-    height: auto;
+    width: 100%; /* Image en plein écran */
     object-fit: cover;
     position: absolute;
     transform: translateY(100px); /* Position initiale en bas */
     opacity: 0;
-    transition: transform 1s ease-out, opacity 1s ease-out; /* Animation de montée */
+    transition: transform 1s ease-out, opacity 1s ease-out; /* Animation "lever" */
 }
 
 .page.visible .image1 {
@@ -57,7 +55,7 @@ p {
     opacity: 1; /* L'image devient visible */
 }
 
-/* Container for Text */
+/* Conteneur du texte */
 .right-container {
     flex: 1;
     display: flex;
@@ -66,16 +64,15 @@ p {
     align-items: flex-start;
     padding: 20px;
     position: relative;
-    overflow: hidden;
 }
 
 .right-container h1,
 .right-container p {
     opacity: 0;
-    animation: fadeIn 1s forwards 0.5s; /* L'animation du texte démarre avec un délai */
+    animation: fadeIn 1s forwards 0.5s; /* Animation du texte avec délai */
 }
 
-/* Animation de Fade-in pour le texte */
+/* Animation fadeIn du texte */
 @keyframes fadeIn {
     0% {
         opacity: 0;
@@ -87,7 +84,7 @@ p {
     }
 }
 
-/* Responsive design */
+/* Design Responsive */
 @media (max-width: 768px) {
     .image1 {
         max-width: 100%;

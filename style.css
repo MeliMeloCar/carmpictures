@@ -7,36 +7,33 @@
 
 /* Style du body */
 body, html {
-    width: 100%; /* Toujours 100% de la largeur de la fenêtre */
-    height: 100%; /* Toujours 100% de la hauteur de la fenêtre */
+    width: 100%;
+    height: 100%;
+    overflow: hidden; /* Empêcher les débordements */
+    background-color: rgb(14, 10, 10); /* Couleur de fond */
+    font-family: 'Dream Avenue', sans-serif;
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: rgb(14, 10, 10); /* Couleur de fond */
-    font-family: 'Dream Avenue', sans-serif;
-    overflow: hidden; /* Éviter les débordements */
 }
 
 /* Conteneur principal */
 .container {
-    width: 90vw; /* Largeur relative pour que tout s'adapte */
-    height: auto;
     position: relative;
+    width: 70vw; /* Taille globale dynamique */
+    max-width: 900px; /* Taille maximale */
+    height: auto; /* Hauteur adaptative */
 }
 
 /* Image "Carmelo Mosca.png" */
 .image-animation {
-    width: 70%; /* Taille relative pour qu'elle reste grande */
-    max-width: 1000px; /* Taille maximale */
-    height: auto; /* Respecte le ratio de l'image */
-    position: absolute;
-    left: 10%; /* Position à 10% de la gauche */
-    top: 50%; /* Centrée verticalement */
-    transform: translateY(-50%); /* Ajustement pour l'alignement */
+    width: 100%; /* L'image prend toute la largeur du conteneur */
+    display: block;
+    margin-left: 10%; /* Décalage de 10% par rapport à la gauche de la fenêtre */
     animation: fadeInUp 1.5s forwards;
 }
 
-/* Animation de l'image (apparition de bas en haut) */
+/* Animation de l'image */
 @keyframes fadeInUp {
     0% {
         opacity: 0;
@@ -44,23 +41,22 @@ body, html {
     }
     100% {
         opacity: 1;
-        transform: translateY(-50%);
+        transform: translateY(0);
     }
 }
 
 /* Texte "Carmelo Mosca" */
 h1 {
-    font-size: 5vw; /* Taille relative pour qu'il s'adapte au zoom/dézoom */
+    font-size: 5vw; /* Taille relative à la largeur de la fenêtre */
     color: #ffffff;
     position: absolute;
-    left: 50%; /* Centré horizontalement */
-    top: 50%; /* Aligner verticalement avec le haut de l'image */
-    transform: translate(-50%, -50%); /* Centrage parfait */
-    white-space: nowrap; /* Empêcher le retour à la ligne */
+    top: 0; /* Aligné en haut de l'image */
+    left: 10%; /* Décalage identique à l'image */
     animation: fadeInText 2s ease-out forwards;
+    white-space: nowrap; /* Empêcher le retour à la ligne */
 }
 
-/* Animation du texte (apparition de gauche à droite) */
+/* Animation du texte */
 @keyframes fadeInText {
     0% {
         transform: translateX(-100%);
@@ -71,12 +67,3 @@ h1 {
         opacity: 1;
     }
 }
-
-/* Responsiveness : le texte et l'image grandissent/retrécissent ensemble */
-.container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    transform: scale(calc(100vw / 1440)); /* Ajuste tout selon la largeur de la fenêtre */
-    transform-origin: top left; /* Point d'origine pour les transformations */

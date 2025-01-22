@@ -22,7 +22,7 @@ body, html {
     max-width: 1200px; /* Largeur maximale pour ne pas trop agrandir sur des écrans larges */
     margin: auto; /* Centrer horizontalement */
     position: relative;
-    text-align: center;
+    text-align: left; /* Aligner le texte à gauche */
     height: auto;
 }
 
@@ -33,7 +33,10 @@ body, html {
     opacity: 0;
     transform: translateY(50px);
     animation: fadeInUp 1.5s forwards;
-    margin: auto; /* Centrer l'image */
+    position: absolute;
+    left: 5%; /* Ajout d'une marge de 5% à gauche */
+    top: 50%; /* Centrer verticalement dans le conteneur */
+    transform: translateY(-50%); /* Ajuster pour l'alignement centré vertical */
 }
 
 /* Animation pour faire apparaître l'image de bas en haut */
@@ -44,7 +47,7 @@ body, html {
     }
     100% {
         opacity: 1;
-        transform: translateY(0);
+        transform: translateY(-50%);
     }
 }
 
@@ -52,8 +55,13 @@ body, html {
 h1 {
     font-size: 5vw; /* Taille dynamique basée sur la largeur de la fenêtre */
     color: #ffffff; /* Couleur du texte */
-    margin: 20px auto 0; /* Centrer le texte horizontalement et ajouter un espace par rapport à l'image */
+    margin: 0; /* Retirer les marges inutiles */
     animation: fadeInText 2s ease-out forwards;
+    position: absolute;
+    left: 75%; /* Ajusté pour positionner le texte à droite de l'image avec une marge */
+    top: 50%; /* Aligné au centre vertical de l'image */
+    transform: translateY(-50%); /* Ajustement vertical */
+    white-space: nowrap; /* Éviter que le texte se coupe en plusieurs lignes */
 }
 
 /* Animation du texte pour qu'il apparaisse de gauche à droite */

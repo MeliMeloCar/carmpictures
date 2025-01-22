@@ -5,14 +5,6 @@
     box-sizing: border-box;
 }
 
-/* Importer la police Dream Avenue depuis le fichier local .ttf */
-@font-face {
-    font-family: 'Dream Avenue';
-    src: url('FontsFree-Net-Dream-Avenue.ttf') format('truetype');
-    font-weight: normal;
-    font-style: normal;
-}
-
 /* Style du body et du conteneur */
 body, html {
     height: 100%;
@@ -22,6 +14,7 @@ body, html {
     align-items: center;
     background-color: rgb(14, 10, 10); /* Couleur de fond */
     overflow: hidden; /* Pour éviter tout débordement */
+    font-family: 'Dream Avenue', sans-serif;
 }
 
 /* Conteneur principal */
@@ -37,11 +30,14 @@ body, html {
 
 /* Animation de l'image */
 .image-animation {
-    width: 110%; /* Augmenter la taille de l'image de 10% */
-    max-width: 880px; /* 10% de plus que la taille précédente */
+    width: 80vw; /* Utilisation de la largeur en viewport */
+    max-width: 880px; /* Taille maximale de l'image */
     opacity: 0;
     transform: translateY(50px);
     animation: fadeInUp 1.5s forwards;
+    position: absolute;
+    left: 50%; /* Centrer horizontalement */
+    transform: translateX(-50%) translateY(50px); /* Décalage pour centrer et animer verticalement */
 }
 
 /* Animation pour faire apparaître l'image de bas en haut */
@@ -58,24 +54,19 @@ body, html {
 
 /* Style du texte */
 h1 {
-    font-size: 74.5px;
-    font-family: 'Dream Avenue', sans-serif;
+    font-size: 5vw; /* Utilisation de la largeur en viewport pour que le texte s'adapte */
     margin-top: 20px;
     color: #ffffff; /* Couleur du texte */
-}
-
-/* Conteneur du texte avec animation de droite à gauche */
-.text-container {
+    animation: fadeInText 2s ease-out forwards;
     position: absolute;
-    top: 20%; /* Aligner le texte avec le début de l'image */
-    right: 10%;  /* Placer le texte à droite de l'image */
-    animation: textSlideIn 2s ease-out forwards;
+    left: 50%;
+    transform: translateX(-50%);
 }
 
-/* Animation de l'apparition du texte de gauche à droite */
-@keyframes textSlideIn {
+/* Animation du texte pour qu'il apparaisse de gauche à droite */
+@keyframes fadeInText {
     0% {
-        transform: translateX(100%);
+        transform: translateX(-100%);
         opacity: 0;
     }
     100% {

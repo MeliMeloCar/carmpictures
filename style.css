@@ -31,14 +31,14 @@ body, html {
 
 /* Animation de l'image */
 .image-animation {
-    width: 70vw; /* L'image occupe 70% de la largeur de la fenêtre */
+    width: 40vw; /* L'image occupe 40% de la largeur de la fenêtre */
     max-width: 880px; /* Taille maximale de l'image */
     opacity: 0;
     transform: translateY(50px);
     animation: fadeInUp 1.5s forwards;
-    position: fixed; /* Fixer l'image à un endroit précis */
-    left: 5%; /* Décalage de 5% de la largeur de la fenêtre pour la laisser à gauche sans la coller */
-    top: 10%; /* Placer l'image à 10% du haut de la fenêtre */
+    position: absolute;
+    left: 5vw; /* Décalage de 5% de la largeur de la fenêtre pour la laisser à gauche sans la coller */
+    top: 10vh; /* Placer l'image à 10% de la hauteur de la fenêtre */
     transition: transform 0.2s ease-in-out; /* Transition pour l'effet de zoom/dézoom */
 }
 
@@ -60,9 +60,9 @@ h1 {
     margin-top: 20px;
     color: #ffffff; /* Couleur du texte */
     animation: fadeInText 2s ease-out forwards;
-    position: fixed; /* Fixer le texte à un endroit précis */
-    left: 55%; /* Placer le texte à 55% de la largeur de la fenêtre, à droite de l'image */
-    top: 10%; /* Aligner verticalement le texte au début de l'image */
+    position: absolute; /* Positionnement absolu pour le texte */
+    left: 55vw; /* Placer le texte à 55% de la largeur de la fenêtre, à droite de l'image */
+    top: 10vh; /* Aligner verticalement le texte au début de l'image */
     transform: translateX(-50%); /* Ajuster pour centrer horizontalement */
     transition: transform 0.2s ease-in-out; /* Transition pour l'effet de zoom/dézoom */
 }

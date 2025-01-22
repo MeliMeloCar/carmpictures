@@ -30,23 +30,25 @@ body, html {
 .image-container {
     position: relative;
     width: 100%;
-    max-width: 900px;
     height: 100%;
     display: flex;
     justify-content: center;
-    margin-bottom: 20px;
+    align-items: center;
+    box-shadow: 0 2px 8px rgba(63,69,81,0.16);
+    overflow: hidden;
+    border-radius: 8px;
 }
 
 /* Animation de l'image */
 .animated-image {
     width: 100%;
-    max-width: 600px;
+    max-width: 800px;
     opacity: 0;
     transform: translateY(50px);
     animation: fadeInUp 1.5s forwards;
 }
 
-/* Transition de l'image */
+/* Animation "lever" */
 @keyframes fadeInUp {
     0% {
         opacity: 0;
@@ -62,6 +64,7 @@ body, html {
 .text-container {
     text-align: center;
     font-family: 'Dream Avenue', sans-serif;
+    margin-top: 20px;
 }
 
 .text-container h1 {

@@ -56,12 +56,12 @@ body, html {
 
 /* Texte */
 h1 {
-    font-size: 4vw; /* Taille relative pour suivre le zoom */
+    font-size: 5vh; /* Taille relative pour suivre le zoom/dézoom */
     color: #ffffff;
     position: absolute;
     top: 0; /* Aligné en haut de l'image */
     left: 50%; /* Centré horizontalement */
-    transform: translate(-50%, 0); /* Ajustement pour aligner le centre */
+    transform: translateX(-50%); /* Ajustement pour centrer le texte */
     animation: fadeInText 2s ease-out forwards;
     white-space: nowrap; /* Évite les retours à la ligne */
     font-family: 'Dream Avenue', sans-serif; /* Utilisation explicite de la police */

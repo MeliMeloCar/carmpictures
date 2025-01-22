@@ -22,8 +22,8 @@ body, html {
     position: relative;
     display: flex;
     flex-direction: row; /* Alignement en ligne, image à gauche, texte à droite */
-    justify-content: center; /* Centrer le contenu horizontalement */
-    align-items: center; /* Centrer le contenu verticalement */
+    justify-content: flex-start; /* Laisser l'image à gauche */
+    align-items: flex-start; /* Aligner le texte en haut de l'image */
     width: 100%;
     max-width: 1200px; /* Limite la largeur du conteneur */
     padding-left: 10vw; /* Applique 10% d'espace à gauche */

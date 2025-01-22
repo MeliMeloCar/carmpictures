@@ -23,8 +23,8 @@ body, html {
 
 /* Animation de l'image */
 .image-animation {
-    width: 110%; /* Augmenter la taille de l'image de 10% */
-    max-width: 880px; /* 10% de plus que la taille précédente */
+    width: 150%; /* Augmenter la taille de l'image de 10% */
+    max-width: 1090px; /* 10% de plus que la taille précédente */
     opacity: 0;
     transform: translateY(50px);
     animation: fadeInUp 1.5s forwards;

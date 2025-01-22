@@ -1,127 +1,93 @@
-/* Général */
-body, html {
+/* Réinitialisation de certaines marges */
+* {
     margin: 0;
     padding: 0;
-    height: 100%;
-    overflow-x: hidden; /* Empêcher les défilements horizontaux */
-    font-family: 'Arial', sans-serif;
+    box-sizing: border-box;
 }
 
-.page {
+/* Général */
+body, html {
+    height: 100%;
     width: 100%;
-    height: 100vh; /* Chaque page prend la pleine hauteur de l'écran */
+    overflow: hidden;
+    font-family: Arial, sans-serif;
+}
+
+/* Page générale */
+.page {
+    height: 100vh; /* Plein écran pour chaque page */
     display: flex;
     justify-content: center;
     align-items: center;
-    position: relative;
-    overflow: hidden;
-    opacity: 0; /* On commence avec les pages invisibles */
-    animation: fadeIn 1s forwards; /* Animation de fade-in */
+    background-color: #000; /* Fond noir */
+    transition: transform 1s ease-in-out;
 }
 
-@keyframes fadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
-}
-
-/* Contenu centré */
+/* Contenu de la page */
 .content {
-    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     text-align: center;
 }
 
+/* Image */
 .image {
-    width: 100%;
-    height: 100%;
-    object-fit: cover; /* Remplir toute la surface sans déformation */
-    position: absolute;
-    top: 0;
-    left: 0;
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: cover; /* S'assurer que l'image prend tout l'espace */
 }
 
+/* Texte et bouton */
 .text-container {
-    position: absolute;
-    top: 20%; /* Ajuster la position du texte */
-    left: 50%;
-    transform: translateX(-50%);
     color: white;
-    text-shadow: 0 2px 5px rgba(0, 0, 0, 0.6);
-    z-index: 1; /* Assurer que le texte reste au-dessus de l'image */
+    margin-top: 20px;
 }
 
 .title {
-    font-size: 3em;
-    margin: 0;
-    animation: slideInFromTop 1s ease-out forwards;
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
 }
 
 .description {
-    font-size: 1.5em;
-    margin-top: 10px;
-    animation: slideInFromBottom 1.5s ease-out forwards;
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
 }
 
 .button {
-    font-size: 1.2em;
-    margin-top: 20px;
+    background-color: #ff6b6b;
     padding: 10px 20px;
-    background-color: #ff7f00;
     color: white;
     text-decoration: none;
     border-radius: 5px;
-    animation: fadeInButton 2s ease-out forwards;
+    font-size: 1.1rem;
+    transition: background-color 0.3s;
 }
 
-/* Animation pour les titres et descriptions */
-@keyframes slideInFromTop {
-    from {
-        transform: translateY(-50px);
-        opacity: 0;
-    }
-    to {
-        transform: translateY(0);
-        opacity: 1;
-    }
+.button:hover {
+    background-color: #e54b4b;
 }
 
-@keyframes slideInFromBottom {
-    from {
-        transform: translateY(50px);
-        opacity: 0;
-    }
-    to {
-        transform: translateY(0);
-        opacity: 1;
-    }
+/* Animation de transition entre les pages */
+.page + .page {
+    transform: translateY(100vh); /* Masquer la seconde page au départ */
 }
 
-@keyframes fadeInButton {
-    from {
-        opacity: 0;
-    }
-    to {
-        opacity: 1;
-    }
+.page:target {
+    transform: translateY(0); /* Lorsqu'on atteint la page */
 }
 
-/* Pages successives */
-#page1 {
-    background-color: #1a1a1a; /* Fond sombre */
-}
-
-#page2 {
-    background-color: #333; /* Fond plus clair */
-}
-
-/* Pour les petits écrans (téléphones) */
+/* Media Queries pour ajuster sur mobile */
 @media (max-width: 768px) {
     .title {
-        font-size: 2em;
+        font-size: 2rem;
     }
+
     .description {
-        font-size: 1.2em;
+        font-size: 1rem;
     }
+
     .button {
-        font-size: 1em;
+        font-size: 1rem;
     }
 }

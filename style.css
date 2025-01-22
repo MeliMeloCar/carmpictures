@@ -15,7 +15,6 @@ body, html {
     background-color: rgb(14, 10, 10); /* Couleur de fond */
     overflow: hidden; /* Pour éviter tout débordement */
     font-family: 'Dream Avenue', sans-serif;
-    position: relative; /* Nécessaire pour fixer les éléments dans la fenêtre */
 }
 
 /* Conteneur principal */
@@ -27,20 +26,17 @@ body, html {
     align-items: center;
     width: 100%;
     height: 100%;
-    min-width: 1000px; /* Définir une largeur minimale pour que la mise en page ne se brise pas */
 }
 
 /* Animation de l'image */
 .image-animation {
-    width: 40vw; /* L'image occupe 40% de la largeur de la fenêtre */
+    width: 70vw; /* L'image occupe 70% de la largeur de la fenêtre */
     max-width: 880px; /* Taille maximale de l'image */
     opacity: 0;
     transform: translateY(50px);
     animation: fadeInUp 1.5s forwards;
     position: absolute;
     left: 5vw; /* Décalage de 5% de la largeur de la fenêtre pour la laisser à gauche sans la coller */
-    top: 10vh; /* Placer l'image à 10% de la hauteur de la fenêtre */
-    transition: transform 0.2s ease-in-out; /* Transition pour l'effet de zoom/dézoom */
 }
 
 /* Animation pour faire apparaître l'image de bas en haut */
@@ -61,11 +57,10 @@ h1 {
     margin-top: 20px;
     color: #ffffff; /* Couleur du texte */
     animation: fadeInText 2s ease-out forwards;
-    position: absolute; /* Positionnement absolu pour le texte */
-    left: 55vw; /* Placer le texte à 55% de la largeur de la fenêtre, à droite de l'image */
-    top: 10vh; /* Aligner verticalement le texte au début de l'image */
-    transform: translateX(-50%); /* Ajuster pour centrer horizontalement */
-    transition: transform 0.2s ease-in-out; /* Transition pour l'effet de zoom/dézoom */
+    position: absolute;
+    left: 50%; /* Centrer horizontalement */
+    top: 0%; /* Aligné en haut de l'image */
+    transform: translateX(-50%); /* Ajustement pour centrer le texte */
 }
 
 /* Animation du texte pour qu'il apparaisse de gauche à droite */
@@ -78,40 +73,4 @@ h1 {
         transform: translateX(0);
         opacity: 1;
     }
-}
-
-/* Footer (par exemple, ajout d'un footer) */
-#footer {
-    height: 90px;
-    text-align: center;
-    clear: both;
-}
-
-/* Fixer les éléments en haut de la page (comme l'exemple donné) */
-#entete {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 90px;
-    background-image: url(images/css/be.jpg);
-    z-index: 10; /* Assurez-vous que l'entête soit au-dessus des autres éléments */
-}
-
-/* Fixer le menu en dessous de l'entête */
-#menu {
-    position: fixed;
-    top: 89px;
-    width: 100%;
-    height: 50px;
-    background-image: url(images/css/bm.jpg);
-    z-index: 5; /* Assurez-vous que le menu soit sous l'entête mais au-dessus du contenu */
-    text-align: center;
-}
-
-/* Contenu principal */
-#content {
-    margin-top: 140px;
-    width: 100%;
-    position: relative;
 }

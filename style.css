@@ -50,15 +50,17 @@ h1 {
 .social-links {
     display: flex;
     gap: 20px; /* Espace entre les icônes */
+    margin-top: 20px; /* Décale les liens vers le bas */
 }
 
-/* Style des icônes sociales */
+/* Style des images des réseaux sociaux */
 .social-icon {
-    width: 30px; /* Largeur des icônes */
-    height: 30px; /* Hauteur des icônes */
-    transition: transform 0.2s ease; /* Animation pour zoom */
+    width: 50px; /* Taille des icônes */
+    height: 50px;
+    transition: transform 0.3s ease; /* Animation douce au survol */
 }
 
+/* Effet au survol des icônes */
 .social-icon:hover {
     transform: scale(1.2); /* Agrandir l'icône au survol */
 }

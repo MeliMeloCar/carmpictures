@@ -27,6 +27,14 @@ body, html {
     height: 100%;
 }
 
+/* Importer la police Dream Avenue */
+@font-face {
+    font-family: 'Dream Avenue';
+    src: url('fonts/FontsFree-Net-Dream-Avenue.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
 /* Animation de l'image */
 .image-animation {
     width: 110%; /* Augmenter la taille de l'image de 10% */
@@ -51,7 +59,7 @@ body, html {
 /* Style du texte */
 h1 {
     font-size: 74.5px;
-    font-family: 'Dream Avenue', sans-serif;
+    font-family: 'Dream Avenue', sans-serif; /* Application de la police locale */
     margin-top: 20px;
     color: #ffffff; /* Couleur du texte */
 }

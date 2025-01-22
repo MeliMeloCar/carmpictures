@@ -5,6 +5,14 @@
     box-sizing: border-box;
 }
 
+/* Définir la police locale Dream Avenue */
+@font-face {
+    font-family: 'Dream Avenue';
+    src: url('FontsFree-Net-Dream-Avenue.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
 /* Style du body et du conteneur */
 body, html {
     height: 100%;
@@ -25,14 +33,6 @@ body, html {
     align-items: center;
     width: 100%;
     height: 100%;
-}
-
-/* Importer la police Dream Avenue */
-@font-face {
-    font-family: 'Dream Avenue';
-    src: url('fonts/FontsFree-Net-Dream-Avenue.ttf') format('truetype');
-    font-weight: normal;
-    font-style: normal;
 }
 
 /* Animation de l'image */
@@ -59,7 +59,7 @@ body, html {
 /* Style du texte */
 h1 {
     font-size: 74.5px;
-    font-family: 'Dream Avenue', sans-serif; /* Application de la police locale */
+    font-family: 'Dream Avenue', sans-serif; /* Utilisation de la police locale Dream Avenue */
     margin-top: 20px;
     color: #ffffff; /* Couleur du texte */
 }

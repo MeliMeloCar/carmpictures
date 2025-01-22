@@ -22,7 +22,7 @@ body, html {
     text-align: center;
     position: relative;
     display: flex;
-    justify-content: center;
+    justify-content: flex-start; /* Aligner à gauche */
     align-items: center;
     width: 100%;
     height: 100%;
@@ -30,14 +30,14 @@ body, html {
 
 /* Animation de l'image */
 .image-animation {
-    width: 80vw; /* Utilisation de la largeur en viewport */
+    width: 70vw; /* L'image occupe 70% de la largeur de la fenêtre */
     max-width: 880px; /* Taille maximale de l'image */
     opacity: 0;
-    transform: translateY(50px) translateX(-40%); /* Déplacer l'image de 40% vers la gauche */
+    transform: translateY(50px);
     animation: fadeInUp 1.5s forwards;
     position: absolute;
-    left: 50%;
-    transform: translateX(-50%) translateY(50px) translateX(-40%); /* Centrer l'image et la déplacer de 40% à gauche */
+    left: 5vw; /* Décalage de 5% de la largeur de la fenêtre pour la laisser à gauche sans la coller */
+    transform: translateY(50px); /* Animation de l'image */
 }
 
 /* Animation pour faire apparaître l'image de bas en haut */
@@ -59,9 +59,9 @@ h1 {
     color: #ffffff; /* Couleur du texte */
     animation: fadeInText 2s ease-out forwards;
     position: absolute;
-    left: 50%;
+    left: 100%; /* Placer le texte juste après l'image */
     top: 0; /* Aligner le texte avec le haut de l'image */
-    transform: translateX(50%) translateY(0); /* Positionner le texte à droite de l'image */
+    transform: translateX(20px); /* Décalage pour placer le texte à droite de l'image */
 }
 
 /* Animation du texte pour qu'il apparaisse de gauche à droite */

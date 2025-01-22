@@ -10,63 +10,69 @@ body, html {
     height: 100%;
     width: 100%;
     display: flex;
-    justify-content: center; /* Centrage horizontal du contenu */
-    align-items: center; /* Centrage vertical du contenu */
-    background-color: rgb(14, 10, 10); /* Couleur de fond */
-    font-family: 'Dream Avenue', sans-serif;
-    overflow: hidden; /* Pour éviter tout débordement */
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(14, 10, 10); /* Fond noir pour donner un look élégant */
+    font-family: 'TT Drugs Trial', sans-serif;
+    color: #ffffff; /* Texte en blanc */
+    overflow: hidden;
 }
 
-/* Conteneur pour l'image et le texte */
-.container {
-    position: relative;
+/* Header : Profil */
+header {
+    text-align: center;
+    margin-top: 50px;
+}
+
+.header-content {
     display: flex;
-    flex-direction: row; /* Alignement en ligne, image à gauche, texte à droite */
-    justify-content: flex-start; /* Laisser l'image à gauche */
-    align-items: flex-start; /* Aligner le texte en haut de l'image */
-    width: 100%;
-    max-width: 1200px; /* Limite la largeur du conteneur */
-    padding-left: 10vw; /* Applique 10% d'espace à gauche */
-}
-
-/* Image qui ajuste sa taille selon la taille de la fenêtre */
-.image {
-    width: 50vw; /* 50% de la largeur de la fenêtre */
-    max-width: 800px; /* Limite la taille maximale de l'image */
-    height: auto; /* Pour garder le ratio */
-    margin-right: 20px; /* Espace entre l'image et le texte */
-    transition: transform 0.2s ease; /* Douce transition pour le zoom */
-}
-
-/* Style du texte */
-h1 {
-    font-size: 5vw; /* Le texte occupe 5% de la largeur de la fenêtre */
-    color: #ffffff; /* Couleur du texte */
-    font-weight: bold;
-    white-space: nowrap; /* Empêche le texte de passer à la ligne */
-    transition: transform 0.2s ease; /* Douce transition pour le zoom */
-}
-
-/* Style des icônes sociales */
-.social-links {
-    display: flex;
+    justify-content: center;
     flex-direction: column;
     align-items: center;
-    margin-top: 20px; /* Ajoute un espacement pour séparer les images du texte */
 }
 
-.social-links img {
-    width: 50px; /* Ajuste la taille des icônes */
+.profile-image {
+    width: 150px; /* Ajuster selon la taille de l'image */
     height: auto;
-    margin-bottom: 10px; /* Espacement entre les images et le texte */
+    border-radius: 50%;
+    border: 5px solid #ffffff;
 }
 
-.about-text {
-    font-family: 'TT Drugs Trial', sans-serif;
-    font-size: 1.2rem; /* Ajuste la taille du texte selon tes besoins */
-    color: #ffffff; /* Couleur du texte */
-    text-align: center; /* Centre le texte */
-    margin-top: 20px; /* Sépare le texte des images */
+h1 {
+    margin-top: 20px;
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+/* Section : Liens sociaux */
+.social-links {
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.social-icon {
+    width: 50px; /* Ajuster la taille des icônes */
+    height: auto;
+    transition: transform 0.3s ease;
+}
+
+.social-icon:hover {
+    transform: scale(1.1); /* Effet de zoom au survol */
+}
+
+/* Section : Texte "à propos" */
+.about {
+    text-align: center;
+    margin-top: 40px;
+    padding: 0 20px; /* Espacement autour du texte */
+    max-width: 800px; /* Limite la largeur du texte */
+    font-size: 1.1rem;
     line-height: 1.6;
-    max-width: 80%; /* Ajuste la largeur du texte pour qu'il soit lisible */
+}
+
+.about p {
+    margin-top: 20px;
 }

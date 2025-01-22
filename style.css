@@ -46,6 +46,7 @@ h1 {
     font-size: 5vw; /* Le texte occupe 5% de la largeur de la fenêtre */
     color: #ffffff; /* Couleur du texte */
     font-weight: bold;
+    white-space: nowrap; /* Empêche le texte de passer à la ligne */
     transition: transform 0.2s ease; /* Douce transition pour le zoom */
 }
 

@@ -5,14 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfolio de Carmelo Mosca</title>
     <style>
-        /* Reset des marges et padding pour tout l'ensemble */
+        /* Général reset des marges et padding */
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
 
-        /* Assurer que le body et html occupent tout l'espace */
+        /* Page en pleine largeur et hauteur */
         html, body {
             height: 100%;
             width: 100%;
@@ -21,17 +21,19 @@
             overflow-x: hidden;
         }
 
-        /* Conteneur des pages SVG en pleine largeur et hauteur */
-        .svg-container {
+        /* Conteneur de l'iframe avec animation */
+        .iframe-container {
+            position: relative;
             width: 100%;
             height: 100vh;
-            position: relative;
+            padding-top: 56.2225%;
             overflow: hidden;
-            opacity: 0; /* Début invisible */
-            animation: fadeIn 1s ease-in-out forwards; /* Animation de fondu */
+            margin: 0;
+            border-radius: 8px;
+            animation: fadeIn 1.5s ease-in-out forwards;
         }
 
-        /* Animation pour le fondu des éléments */
+        /* Animation de fondu d'entrée */
         @keyframes fadeIn {
             0% {
                 opacity: 0;
@@ -41,34 +43,20 @@
             }
         }
 
-        /* Page SVG en pleine largeur et hauteur */
-        .page {
-            width: 100vw;
-            height: 100vh;
-            object-fit: cover;
-            display: block;
-        }
-
-        /* Version mobile : ajuster la taille et le positionnement */
-        @media screen and (max-width: 768px) {
-            .svg-container {
-                height: 100vh;
-                display: flex;
-                flex-direction: column;
-                justify-content: center;
-            }
-
-            .page {
-                width: 100%;
-                height: 100%;
-            }
-        }
-
-        /* Animation pour la page suivante avec un décalage */
-        .page-appear {
+        /* Style de l'iframe */
+        iframe {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            border: none;
+            padding: 0;
+            margin: 0;
             animation: slideIn 1s ease-out forwards;
         }
 
+        /* Animation de glissement (comme la transition dans Canva) */
         @keyframes slideIn {
             0% {
                 transform: translateY(100%);
@@ -77,19 +65,36 @@
                 transform: translateY(0);
             }
         }
+
+        /* Style pour le lien de retour vers Canva */
+        a {
+            display: block;
+            text-align: center;
+            font-size: 16px;
+            color: #000;
+            padding-top: 20px;
+            text-decoration: none;
+            font-family: Arial, sans-serif;
+        }
     </style>
 </head>
 <body>
 
-    <!-- Première page SVG -->
-    <div class="svg-container">
-        <object class="page page-appear" type="image/svg+xml" data="1.svg" aria-label="Page 1 du design Canva"></object>
+    <!-- Conteneur avec animation de fondu et glissement -->
+    <div class="iframe-container">
+        <iframe src="https://www.canva.com/design/DAGa_NCoaCY/QyTNa3AUINkKCP5YY3V88A/view?embed" 
+                loading="lazy" 
+                allowfullscreen="allowfullscreen" 
+                allow="fullscreen">
+        </iframe>
     </div>
 
-    <!-- Deuxième page SVG -->
-    <div class="svg-container">
-        <object class="page page-appear" type="image/svg+xml" data="2.svg" aria-label="Page 2 du design Canva"></object>
-    </div>
+    <!-- Lien pour retourner sur Canva -->
+    <a href="https://www.canva.com/design/DAGa_NCoaCY/QyTNa3AUINkKCP5YY3V88A/view?utm_content=DAGa_NCoaCY&utm_campaign=designshare&utm_medium=embeds&utm_source=link" 
+       target="_blank" 
+       rel="noopener">
+        Carmelo Mosca par Carmélo Mosca
+    </a>
 
 </body>
 </html>

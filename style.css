@@ -1,48 +1,44 @@
-/* Importation de la police Dream Avenue */
-@font-face {
-    font-family: 'Dream Avenue';
-    src: url('FontsFree-Net-Dream-Avenue.ttf') format('truetype');
-    font-weight: normal;
-    font-style: normal;
-}
-
-body, html {
-    width: 100%;
-    height: 100%;
+/* Réinitialiser les marges et paddings */
+* {
     margin: 0;
     padding: 0;
-    font-family: 'Dream Avenue', sans-serif;
-    background-color: rgb(14, 10, 10);
+    box-sizing: border-box;
+}
+
+/* Style du body et du conteneur */
+body, html {
+    height: 100%;
+    width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
-    overflow: hidden;
+    background-color: rgb(14, 10, 10); /* Couleur de fond */
+    font-family: 'Dream Avenue', sans-serif;
+    overflow: hidden; /* Pour éviter tout débordement */
 }
 
 /* Conteneur principal */
 .container {
     position: relative;
+    display: flex;
+    justify-content: flex-start; /* Aligner l'image à gauche */
+    align-items: center;
     width: 100%;
     height: 100%;
-    display: flex;
-    justify-content: flex-start; /* L'image est alignée à gauche */
-    align-items: center;
-    transform-origin: center center;
-    transition: transform 0.3s ease;
 }
 
-/* Image */
+/* Animation de l'image */
 .image-animation {
     width: 70vw; /* L'image occupe 70% de la largeur de la fenêtre */
-    max-width: 880px;
+    max-width: 880px; /* Taille maximale de l'image */
     opacity: 0;
     transform: translateY(50px);
     animation: fadeInUp 1.5s forwards;
     position: absolute;
-    left: 10%; /* Décalage de 10% de la largeur de la fenêtre pour la laisser à gauche */
+    left: 10%; /* Décalage de 10% de la largeur de la fenêtre pour la laisser légèrement à gauche */
 }
 
-/* Animation de l'image */
+/* Animation pour faire apparaître l'image de bas en haut */
 @keyframes fadeInUp {
     0% {
         opacity: 0;
@@ -54,18 +50,18 @@ body, html {
     }
 }
 
-/* Texte */
+/* Style du texte */
 h1 {
-    font-size: 5vw; /* La taille du texte est relative à la largeur de la fenêtre */
-    color: #ffffff;
-    position: absolute;
-    top: 0; /* Aligné en haut de l'image */
-    left: 50%; /* Centré horizontalement */
-    transform: translateX(-50%);
+    font-size: 7vw; /* Utilisation de la largeur en viewport pour que le texte s'adapte */
+    color: #ffffff; /* Couleur du texte */
     animation: fadeInText 2s ease-out forwards;
+    position: absolute;
+    left: 50%; /* Centrer horizontalement */
+    top: 0%; /* Aligné en haut de l'image */
+    transform: translateX(-50%); /* Ajustement pour centrer le texte */
 }
 
-/* Animation du texte */
+/* Animation du texte pour qu'il apparaisse de gauche à droite */
 @keyframes fadeInText {
     0% {
         transform: translateX(-100%);
@@ -75,24 +71,4 @@ h1 {
         transform: translateX(0);
         opacity: 1;
     }
-}
-
-/* Mise à l'échelle globale lors du zoom/dézoom */
-html {
-    font-size: 16px;
-}
-
-body {
-    transform: scale(1);
-    transition: transform 0.3s ease;
-}
-
-/* Lors du zoom */
-body.zoomed {
-    transform: scale(1.2);
-}
-
-/* Lors du dézoom */
-body.dezoomed {
-    transform: scale(0.8);
 }

@@ -5,122 +5,55 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfolio de Carmelo Mosca</title>
     <style>
-        /* Enlève les marges et le padding par défaut */
+        /* Reset du margin et padding pour tout l'ensemble */
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
 
-        /* Mettre le body et html en 100% de hauteur pour occuper toute la fenêtre */
+        /* Fullscreen sur body et html */
         html, body {
             height: 100%;
-            overflow-x: hidden; /* Empêche le défilement horizontal */
+            overflow-x: hidden;
             font-family: Arial, sans-serif;
         }
 
-        /* Conteneur principal pour scroller */
+        /* Conteneur principal */
         .svg-container {
             display: flex;
             flex-direction: column;
-            align-items: center;
-            justify-content: flex-start;
             width: 100%;
-            min-height: 100vh;  /* Assure que le container prend toute la hauteur de la fenêtre */
-            overflow-y: auto;   /* Permet de scroller verticalement */
+            height: 100%;
+            overflow-y: auto; /* Permet de scroller */
         }
 
-        .svg-container object, .svg-container img {
-            width: 100%;          /* Ajuste la taille des SVGs en fonction de la largeur de la fenêtre */
-            max-width: 1200px;    /* Largeur maximale de chaque SVG */
-            margin-bottom: 20px;  /* Espace entre les pages SVG */
+        /* Style de la première page (SVG) */
+        .svg-container .page {
+            width: 100vw;          /* Prendre toute la largeur */
+            height: 100vh;         /* Prendre toute la hauteur */
+            object-fit: contain;   /* Maintien du ratio du SVG */
+            transition: transform 0.5s ease; /* Animation de transition */
         }
 
-        /* Optionnel : Ajoute un peu de style pour le fond */
+        /* Animation de transformation au survol */
+        .svg-container .page:hover {
+            transform: scale(1.05); /* Légère mise à l'échelle au survol */
+        }
+
+        /* Ajout d'un fond */
         body {
             background-color: #f5f5f5;
         }
     </style>
 </head>
-
 <body>
-    <!-- Conteneur pour les fichiers SVG -->
     <div class="svg-container">
-        <!-- Intégration de la première page SVG -->
-        <object type="image/svg+xml" data="1.svg" aria-label="Page 1 du design Canva"></object>
-        
-        <!-- Intégration de la deuxième page SVG -->
-        <object type="image/svg+xml" data="2.svg" aria-label="Page 2 du design Canva"></object>
+        <!-- Première page SVG -->
+        <object class="page" type="image/svg+xml" data="1.svg" aria-label="Page 1 du design Canva"></object>
 
-        <!-- Tu peux ajouter plus de pages SVG si nécessaire -->
-        <!-- <object type="image/svg+xml" data="3.svg" aria-label="Page 3 du design Canva"></object> -->
-    </div>
-</body>
-</html>
-<!DOCTYPE html>
-<html lang="fr">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio de Carmelo Mosca</title>
-    <style>
-        /* Enlève les marges et le padding par défaut */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        /* Mettre le body et html en 100% de hauteur pour occuper toute la fenêtre */
-        html, body {
-            height: 100%;
-            overflow-x: hidden; /* Empêche le défilement horizontal */
-            font-family: Arial, sans-serif;
-        }
-
-        /* Conteneur principal pour scroller */
-        .svg-container {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: flex-start;
-            width: 100%;
-            min-height: 100vh;  /* Assure que le container prend toute la hauteur de la fenêtre */
-            overflow-y: auto;   /* Permet de scroller verticalement */
-        }
-
-        /* Rendre les SVGs en pleine largeur et pleine hauteur */
-        .svg-container object, .svg-container img {
-            width: 100vw;          /* Ajuste la largeur en fonction de la fenêtre */
-            height: 100vh;         /* Ajuste la hauteur en fonction de la fenêtre */
-            object-fit: contain;   /* Maintient l'aspect ratio des SVGs */
-            margin-bottom: 0;      /* Retire l'espace entre les pages SVG */
-            transition: all 0.3s ease; /* Animation pour un effet de transition */
-        }
-
-        /* Optionnel : Ajoute un peu de style pour le fond */
-        body {
-            background-color: #f5f5f5;
-        }
-
-        /* Effet d'animation au survol de la page SVG */
-        .svg-container object:hover {
-            transform: scale(1.05); /* Légère mise à l'échelle */
-        }
-    </style>
-</head>
-
-<body>
-    <!-- Conteneur pour les fichiers SVG -->
-    <div class="svg-container">
-        <!-- Intégration de la première page SVG -->
-        <object type="image/svg+xml" data="1.svg" aria-label="Page 1 du design Canva"></object>
-        
-        <!-- Intégration de la deuxième page SVG -->
-        <object type="image/svg+xml" data="2.svg" aria-label="Page 2 du design Canva"></object>
-
-        <!-- Tu peux ajouter plus de pages SVG si nécessaire -->
-        <!-- <object type="image/svg+xml" data="3.svg" aria-label="Page 3 du design Canva"></object> -->
+        <!-- Deuxième page SVG, affichée en dessous de la première -->
+        <object class="page" type="image/svg+xml" data="2.svg" aria-label="Page 2 du design Canva"></object>
     </div>
 </body>
 </html>

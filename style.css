@@ -19,6 +19,7 @@ body {
     height: 100vh;
     scroll-snap-align: start;
     transition: background-color 0.3s ease;
+    position: relative;
 }
 
 /* Conteneur gauche - image */
@@ -27,13 +28,15 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    padding: 0 20px;  /* Ajout d'un padding pour bien centrer l'image */
 }
 
 .image1 {
-    max-width: 80%;
+    max-width: 80%; /* Réduction de la taille pour mieux s'adapter */
     height: auto;
     border-radius: 8px;
-    transition: transform 0.3s ease-in-out;
+    transition: transform 1s ease-in-out; /* Ajout de la transition */
+    object-fit: cover; /* Permet à l'image de garder ses proportions tout en s'ajustant à l'espace disponible */
 }
 
 /* Conteneur droit - texte */

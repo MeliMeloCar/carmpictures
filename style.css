@@ -10,7 +10,7 @@ body, html {
     height: 100%;
     width: 100%;
     display: flex;
-    justify-content: center; /* Centrage horizontal du contenu */
+    justify-content: flex-start; /* Centrage horizontal ajusté à gauche */
     align-items: center; /* Centrage vertical du contenu */
     background-color: rgb(14, 10, 10); /* Couleur de fond */
     font-family: 'Dream Avenue', sans-serif;
@@ -25,14 +25,14 @@ body, html {
     justify-content: flex-start; /* Laisser l'image à gauche */
     align-items: flex-start; /* Aligner le texte en haut de l'image */
     width: 100%;
-    max-width: 1200px; /* Limite la largeur du conteneur */
-    padding-left: 10vw; /* Applique 10% d'espace à gauche */
+    max-width: 100%; /* Limiter la largeur du conteneur à la taille de l'écran */
+    padding-left: 5vw; /* Applique 5% d'espace à gauche pour plus de marge */
 }
 
 /* Image qui ajuste sa taille selon la taille de la fenêtre */
 .image {
-    width: 50vw; /* 50% de la largeur de la fenêtre */
-    max-width: 800px; /* Limite la taille maximale de l'image */
+    width: 40vw; /* Réduit la largeur de l'image à 40% de la fenêtre */
+    max-width: 600px; /* Limite la taille maximale de l'image */
     height: auto; /* Pour garder le ratio */
     margin-right: 20px; /* Espace entre l'image et le texte */
     transition: transform 0.2s ease; /* Douce transition pour le zoom */

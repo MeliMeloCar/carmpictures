@@ -5,6 +5,14 @@
     box-sizing: border-box;
 }
 
+/* Importer la police Dream Avenue depuis le fichier local .ttf */
+@font-face {
+    font-family: 'Dream Avenue';
+    src: url('FontsFree-Net-Dream-Avenue.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
 /* Style du body et du conteneur */
 body, html {
     height: 100%;

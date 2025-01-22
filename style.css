@@ -23,14 +23,15 @@ body, html {
 
 /* Animation de l'image */
 .image-animation {
-    width: 150%; /* Augmenter la taille de l'image de 10% */
-    max-width: 1090px; /* 10% de plus que la taille précédente */
+    width: 110%; /* Augmenter la taille de l'image de 10% */
+    max-width: 880px; /* 10% de plus que la taille précédente */
     opacity: 0;
     transform: translateY(50px);
     animation: fadeInUp 1.5s forwards;
     position: absolute;
-    left: 25%; /* Positionner à 25% de la largeur du viewport (entre gauche et centre) */
-    transform: translateX(-25%) translateY(50px); /* Décalage pour animer et centrer verticalement */
+    left: 50%; /* Centré horizontalement */
+    top: 50%; /* Centré verticalement */
+    transform: translateX(-50%) translateY(-50px); /* Ajuster pour centrer parfaitement */
 }
 
 /* Animation pour faire apparaître l'image de bas en haut */

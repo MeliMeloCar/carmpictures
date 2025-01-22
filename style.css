@@ -10,7 +10,7 @@ body, html {
     height: 100%;
     width: 100%;
     display: flex;
-    justify-content: flex-start; /* Centrage horizontal ajusté à gauche */
+    justify-content: center; /* Centrage horizontal du contenu */
     align-items: center; /* Centrage vertical du contenu */
     background-color: rgb(14, 10, 10); /* Couleur de fond */
     font-family: 'Dream Avenue', sans-serif;
@@ -21,20 +21,21 @@ body, html {
 .container {
     position: relative;
     display: flex;
-    flex-direction: column; /* Image en haut, texte et liens en dessous */
+    flex-direction: row; /* Alignement en ligne, image à gauche, texte à droite */
     justify-content: flex-start; /* Laisser l'image à gauche */
     align-items: flex-start; /* Aligner le texte en haut de l'image */
     width: 100%;
-    max-width: 100%; /* Limiter la largeur du conteneur à la taille de l'écran */
-    padding-left: 5vw; /* Applique 5% d'espace à gauche pour plus de marge */
+    max-width: 1200px; /* Limite la largeur du conteneur */
+    padding-left: 10vw; /* Applique 10% d'espace à gauche */
 }
 
 /* Image qui ajuste sa taille selon la taille de la fenêtre */
 .image {
-    width: 40vw; /* Réduit la largeur de l'image à 40% de la fenêtre */
-    max-width: 600px; /* Limite la taille maximale de l'image */
+    width: 50vw; /* 50% de la largeur de la fenêtre */
+    max-width: 800px; /* Limite la taille maximale de l'image */
     height: auto; /* Pour garder le ratio */
-    margin-bottom: 20px; /* Espace entre l'image et le texte */
+    margin-right: 20px; /* Espace entre l'image et le texte */
+    transition: transform 0.2s ease; /* Douce transition pour le zoom */
 }
 
 /* Style du texte */
@@ -43,37 +44,29 @@ h1 {
     color: #ffffff; /* Couleur du texte */
     font-weight: bold;
     white-space: nowrap; /* Empêche le texte de passer à la ligne */
-    margin-bottom: 20px; /* Espace entre le texte et les icônes */
-}
-
-/* Conteneur des liens sociaux */
-.social-links {
-    display: flex;
-    gap: 20px; /* Espace entre les icônes */
-    margin-top: 20px; /* Décale les liens vers le bas */
-}
-
-/* Style des images des réseaux sociaux */
-.social-icon {
-    width: 50px; /* Taille des icônes */
-    height: 50px;
-    transition: transform 0.3s ease; /* Animation douce au survol */
-}
-
-/* Effet au survol des icônes */
-.social-icon:hover {
-    transform: scale(1.2); /* Agrandir l'icône au survol */
-}
-
-/* Ajustement global pour zoom/dézoom */
-html {
-    transform: scale(1); /* Par défaut à 100% */
     transition: transform 0.2s ease; /* Douce transition pour le zoom */
 }
 
-/* Exemple pour agrandir ou rétrécir tout le contenu à un moment donné */
-@media (max-width: 768px) {
-    html {
-        transform: scale(0.9); /* Par exemple, quand l'écran est plus petit, on rétrécit tout */
-    }
+/* Style des icônes sociales */
+.social-links {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px; /* Ajoute un espacement pour séparer les images du texte */
+}
+
+.social-links img {
+    width: 50px; /* Ajuste la taille des icônes */
+    height: auto;
+    margin-bottom: 10px; /* Espacement entre les images et le texte */
+}
+
+.about-text {
+    font-family: 'TT Drugs Trial', sans-serif;
+    font-size: 1.2rem; /* Ajuste la taille du texte selon tes besoins */
+    color: #ffffff; /* Couleur du texte */
+    text-align: center; /* Centre le texte */
+    margin-top: 20px; /* Sépare le texte des images */
+    line-height: 1.6;
+    max-width: 80%; /* Ajuste la largeur du texte pour qu'il soit lisible */
 }

@@ -33,11 +33,11 @@ body, html {
     width: 80vw; /* Utilisation de la largeur en viewport */
     max-width: 880px; /* Taille maximale de l'image */
     opacity: 0;
-    transform: translateY(50px);
+    transform: translateY(50px) translateX(-40%); /* Déplacer l'image de 40% vers la gauche */
     animation: fadeInUp 1.5s forwards;
     position: absolute;
-    left: 50%; /* Centrer horizontalement */
-    transform: translateX(-50%) translateY(50px); /* Décalage pour centrer et animer verticalement */
+    left: 50%;
+    transform: translateX(-50%) translateY(50px) translateX(-40%); /* Centrer l'image et la déplacer de 40% à gauche */
 }
 
 /* Animation pour faire apparaître l'image de bas en haut */
@@ -60,7 +60,8 @@ h1 {
     animation: fadeInText 2s ease-out forwards;
     position: absolute;
     left: 50%;
-    transform: translateX(-50%);
+    top: 0; /* Aligner le texte avec le haut de l'image */
+    transform: translateX(50%) translateY(0); /* Positionner le texte à droite de l'image */
 }
 
 /* Animation du texte pour qu'il apparaisse de gauche à droite */

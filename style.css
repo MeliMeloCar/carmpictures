@@ -1,45 +1,25 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+/* Style global pour s'assurer que la page prend tout l'espace */
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
 }
 
-body {
-  font-family: Arial, sans-serif;
-  background-color: #f1f1f1;
+.content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    text-align: center;
 }
 
-.container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-  flex-direction: column;
-  text-align: center;
+h1 {
+    font-size: 3em;
+    color: black;
 }
 
-.image-wrapper {
-  position: relative;
-  width: 100%;
-  height: 70%;
-  animation: moveUp 3s ease-out;
-}
-
-.image {
-  width: 100%;
-  height: auto;
-  object-fit: contain;
-}
-
-.text-wrapper {
-  margin-top: 20px;
-}
-
-@keyframes moveUp {
-  0% {
-    transform: translateY(100%);
-  }
-  100% {
-    transform: translateY(0);
-  }
+p {
+    font-size: 1.5em;
+    color: #555;
 }

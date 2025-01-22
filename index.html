@@ -1,112 +1,48 @@
-<!DOCTYPE html>
-<html lang="fr">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio Carmelo Mosca</title>
-    <style>
-        /* Réinitialiser les marges et les padding */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+/* Assurer que le body prend toute la hauteur et qu'il n'y a pas de marges */
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    overflow-x: hidden;
+}
 
-        /* Style général du body */
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            overflow-x: hidden; /* Empêche le défilement horizontal */
-        }
+/* Conteneur pour chaque page avec un affichage en plein écran */
+.page {
+    width: 100%;
+    height: 100vh; /* Hauteur de l'écran */
+    display: flex;
+    justify-content: center; /* Centrer le contenu horizontalement */
+    align-items: center; /* Centrer le contenu verticalement */
+    overflow: hidden; /* Empêcher les débordements */
+}
 
-        /* Conteneur principal de la page */
-        .section {
-            position: relative;
-            width: 100%;
-            height: 100vh;
-            overflow: hidden;
-        }
+/* Assurer que les SVG prennent toute la largeur et hauteur de leur conteneur */
+.svg-fullscreen {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Remplir tout l'espace sans déformation */
+}
 
-        /* Les SVG (ou images) doivent prendre tout l'écran */
-        .svg-container {
-            width: 100%;
-            height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            animation: fadeIn 2s ease-out;
-        }
+/* Ajout d'animations ou transitions ici, si nécessaire */
+.page {
+    transition: opacity 1s ease-in-out;
+}
 
-        /* Animation de fondu pour l'entrée */
-        @keyframes fadeIn {
-            0% {
-                opacity: 0;
-            }
-            100% {
-                opacity: 1;
-            }
-        }
+/* Optionnel : animation d'apparition au scroll */
+#page1, #page2 {
+    opacity: 0;
+    animation: fadeIn 1s forwards;
+}
 
-        /* Animation de glissement pour chaque section */
-        @keyframes slideIn {
-            0% {
-                transform: translateY(100%);
-            }
-            100% {
-                transform: translateY(0);
-            }
-        }
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
 
-        /* Pour chaque section (le SVG ou image) */
-        .svg-content {
-            width: 100%;
-            height: 100%;
-            display: block;
-            animation: slideIn 1s ease-out forwards;
-        }
-
-        /* Styles pour le texte en bas de chaque section */
-        .bottom-text {
-            position: absolute;
-            bottom: 10px;
-            left: 50%;
-            transform: translateX(-50%);
-            color: #fff;
-            font-size: 20px;
-        }
-
-        /* Rendre la page responsive sur mobile */
-        @media (max-width: 768px) {
-            .section {
-                height: 100vh;
-            }
-
-            .svg-content {
-                height: 100%;
-            }
-        }
-    </style>
-</head>
-<body>
-
-    <!-- Première section avec le premier SVG -->
-    <div class="section">
-        <div class="svg-container">
-            <!-- Tu remplaces le lien suivant par le chemin vers ton fichier 1.svg -->
-            <object class="svg-content" data="1.svg" type="image/svg+xml"></object>
-        </div>
-        <div class="bottom-text">Page 1</div>
-    </div>
-
-    <!-- Deuxième section avec le deuxième SVG -->
-    <div class="section">
-        <div class="svg-container">
-            <!-- Tu remplaces le lien suivant par le chemin vers ton fichier 2.svg -->
-            <object class="svg-content" data="2.svg" type="image/svg+xml"></object>
-        </div>
-        <div class="bottom-text">Page 2</div>
-    </div>
-
-</body>
-</html>
+/* Media queries pour les téléphones */
+@media (max-width: 768px) {
+    .svg-fullscreen {
+        width: 100%;
+        height: 100%;
+    }
+}

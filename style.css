@@ -44,7 +44,7 @@ p {
 }
 
 .image1 {
-    width: 100%; /* Image en plein écran */
+    width: 100%;
     object-fit: cover;
     position: absolute;
     transform: translateY(100px); /* Position initiale en bas */

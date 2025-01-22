@@ -1,45 +1,57 @@
-/* Reset du margin et padding */
-* {
+/* General Styling */
+body, html {
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
-}
-
-/* Pour le body */
-body {
+    height: 100%;
     font-family: Arial, sans-serif;
-    overflow-x: hidden;
 }
 
-/* Section 1 */
+h1 {
+    font-size: 74.5px;
+    font-family: 'Dream Avenue', sans-serif;
+    margin-bottom: 20px;
+}
+
+p {
+    font-size: 20px;
+}
+
+/* Pages */
 .page {
     display: flex;
-    align-items: center;
     justify-content: center;
-    height: 100vh;
-    scroll-snap-align: start;
-    transition: background-color 0.3s ease;
-    position: relative;
+    align-items: center;
+    height: 100vh; /* Full screen height */
+    scroll-snap-align: start; /* Permet le défilement en snap */
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
 }
 
-/* Conteneur gauche - image */
+.page.visible {
+    opacity: 1;
+}
+
+/* Container for Image */
 .left-container {
     flex: 1;
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 0 20px;  /* Ajout d'un padding pour bien centrer l'image */
+    padding: 0 20px;
 }
 
 .image1 {
-    max-width: 80%; /* Réduction de la taille pour mieux s'adapter */
+    max-width: 80%; /* L'image prend 80% de la largeur */
     height: auto;
-    border-radius: 8px;
-    transition: transform 1s ease-in-out; /* Ajout de la transition */
-    object-fit: cover; /* Permet à l'image de garder ses proportions tout en s'ajustant à l'espace disponible */
+    object-fit: cover;
+    transition: transform 1s ease-in-out;
 }
 
-/* Conteneur droit - texte */
+.page.visible .image1 {
+    transform: scale(1.05); /* L'image s'agrandit au moment où la page devient visible */
+}
+
+/* Container for Text */
 .right-container {
     flex: 1;
     display: flex;
@@ -49,101 +61,27 @@ body {
     padding: 20px;
 }
 
-#page1 h1 {
-    font-family: 'Dream Avenue', sans-serif;
-    font-size: 74.5px; /* Taille de la police */
-    color: #333;
-    margin-bottom: 20px;
+.right-container h1,
+.right-container p {
     opacity: 0;
-    animation: fadeInUp 2s forwards;
+    animation: fadeIn 2s forwards;
 }
 
-#page1 p {
-    font-size: 1.2rem;
-    color: #777;
-    opacity: 0;
-    animation: fadeInUp 2s 0.5s forwards;
-}
-
-/* Section 2 */
-#page2 {
-    background-color: #fff;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 20px;
-    height: 100vh;
-    scroll-snap-align: start;
-}
-
-#page2 .text-container {
-    text-align: center;
-    color: #333;
-}
-
-#page2 h1 {
-    font-size: 2.5rem;
-    color: #333;
-}
-
-#page2 p {
-    font-size: 1.5rem;
-    color: #777;
-}
-
-/* Animation */
-@keyframes fadeInUp {
-    from {
+/* Animation de Fade-in */
+@keyframes fadeIn {
+    0% {
         opacity: 0;
-        transform: translateY(20px);
+        transform: translateY(50px);
     }
-    to {
+    100% {
         opacity: 1;
         transform: translateY(0);
     }
 }
 
-/* Effet de scroll */
-html, body {
-    height: 100%;
-    scroll-snap-type: y mandatory;
-    overflow-y: scroll;
-}
-
-.page {
-    scroll-snap-align: start;
-}
-
-/* Responsivité */
+/* Responsive design */
 @media (max-width: 768px) {
-    #page1 {
-        flex-direction: column;
-        justify-content: center;
-    }
-
-    .left-container, .right-container {
-        width: 100%;
-        padding: 10px;
-    }
-
-    #page1 h1 {
-        font-size: 2rem;
-    }
-
-    #page1 p {
-        font-size: 1rem;
-    }
-
-    #image1 {
+    .image1 {
         max-width: 100%;
-        height: auto;
-    }
-
-    #page2 h1 {
-        font-size: 2rem;
-    }
-
-    #page2 p {
-        font-size: 1rem;
     }
 }

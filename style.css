@@ -13,31 +13,37 @@ body, html {
     justify-content: center;
     align-items: center;
     background-color: #ffffff;
+    overflow: hidden; /* Pour éviter de voir les marges ou l'image hors de l'écran */
 }
 
 /* Conteneur principal */
 .container {
     text-align: center;
+    position: relative;
 }
 
 /* Animation de l'image */
 .image-animation {
-    width: 100%;
-    max-width: 800px;
+    width: 80%; /* Ajuste la taille de l'image */
+    max-width: 800px; /* S'assure que l'image ne dépasse pas une taille raisonnable */
     opacity: 0;
     transform: translateY(50px);
     animation: fadeInUp 1.5s forwards;
+    position: absolute;
+    top: 50%; /* Centrage vertical */
+    left: 50%; /* Centrage horizontal */
+    transform: translate(-50%, -50%) translateY(50px); /* Centre l'image dans la page et applique l'animation */
 }
 
 /* Animation pour faire apparaître l'image de bas en haut */
 @keyframes fadeInUp {
     0% {
         opacity: 0;
-        transform: translateY(50px);
+        transform: translate(-50%, -50%) translateY(50px);
     }
     100% {
         opacity: 1;
-        transform: translateY(0);
+        transform: translate(-50%, -50%) translateY(0);
     }
 }
 
@@ -47,4 +53,5 @@ h1 {
     font-family: 'Dream Avenue', sans-serif;
     margin-top: 20px;
     color: #000000;
+    z-index: 10; /* Pour s'assurer que le texte est au-dessus de l'image */
 }

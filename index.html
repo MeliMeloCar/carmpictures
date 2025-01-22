@@ -17,17 +17,18 @@
             height: 100%;
             width: 100%;
             margin: 0;
+            padding: 0;
             overflow: hidden; /* Cache tout débordement en dehors de la fenêtre */
         }
 
-        /* Conteneur des pages */
+        /* Conteneur des pages SVG avec largeur et hauteur à 100% */
         .svg-container {
             width: 100%;
             height: 100%;
             overflow-y: scroll; /* Permet de défiler verticalement */
         }
 
-        /* Page SVG */
+        /* Page SVG sans espace autour */
         .page {
             width: 100vw;   /* Largeur égale à la largeur de la fenêtre */
             height: 100vh;  /* Hauteur égale à la hauteur de la fenêtre */
@@ -35,10 +36,10 @@
             display: block;
         }
 
-        /* Ajout de l'animation sur le survol */
-        .page:hover {
-            transform: scale(1.05); /* Légère mise à l'échelle au survol */
-            transition: transform 0.5s ease;
+        /* Supprimer le scroll vertical si possible, ajout du contenu en plein écran */
+        .svg-container {
+            overflow-y: auto; /* Permet un défilement si le contenu dépasse */
+            height: 100%;
         }
 
     </style>

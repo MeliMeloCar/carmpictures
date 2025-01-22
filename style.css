@@ -13,18 +13,28 @@ body, html {
     justify-content: center;
     align-items: center;
     background-color: rgb(14, 10, 10); /* Couleur de fond */
-    font-family: 'Dream Avenue', sans-serif;
+    font-family: 'Dream Avenue', sans-serif; /* Police locale */
     overflow: hidden; /* Pour éviter tout débordement */
+}
+
+/* Importation de la police Dream Avenue depuis le fichier local */
+@font-face {
+    font-family: 'Dream Avenue';
+    src: url('Dream-Avenue.ttf') format('truetype'); /* Fichier .ttf dans le même dossier */
+    font-weight: normal;
+    font-style: normal;
 }
 
 /* Conteneur principal */
 .container {
+    text-align: center;
     position: relative;
     display: flex;
-    justify-content: flex-start; /* Aligner l'image à gauche */
+    justify-content: flex-start; /* Aligner à gauche */
     align-items: center;
     width: 100%;
     height: 100%;
+    transform-origin: center center; /* Assurer que tout est centré lors du zoom */
 }
 
 /* Animation de l'image */
@@ -35,7 +45,7 @@ body, html {
     transform: translateY(50px);
     animation: fadeInUp 1.5s forwards;
     position: absolute;
-    left: 10%; /* Décalage de 10% de la largeur de la fenêtre pour la laisser légèrement à gauche */
+    left: 10vw; /* Décalage de 10% de la largeur de la fenêtre pour la laisser à gauche sans la coller */
 }
 
 /* Animation pour faire apparaître l'image de bas en haut */
@@ -52,7 +62,8 @@ body, html {
 
 /* Style du texte */
 h1 {
-    font-size: 10vw; /* Utilisation de la largeur en viewport pour que le texte s'adapte */
+    font-size: 8vw; /* Taille dynamique en fonction de la largeur de la fenêtre */
+    margin-top: 20px;
     color: #ffffff; /* Couleur du texte */
     animation: fadeInText 2s ease-out forwards;
     position: absolute;
@@ -72,5 +83,24 @@ h1 {
     100% {
         transform: translateX(0);
         opacity: 1;
+    }
+}
+
+/* Appliquer une mise à l'échelle uniforme sur toute la page (image + texte) */
+@media screen and (max-width: 1200px) {
+    body {
+        zoom: 90%;
+    }
+}
+
+@media screen and (max-width: 1000px) {
+    body {
+        zoom: 80%;
+    }
+}
+
+@media screen and (max-width: 800px) {
+    body {
+        zoom: 70%;
     }
 }

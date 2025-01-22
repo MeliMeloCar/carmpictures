@@ -1,9 +1,11 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=3.0, user-scalable=yes">
-    <title>Carmelo Mosca - Portfolio</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carmpictures</title>
+
+    <!-- Importation de la police Dream Avenue depuis le fichier local -->
     <style>
         @font-face {
             font-family: 'Dream Avenue';
@@ -11,32 +13,21 @@
             font-weight: normal;
             font-style: normal;
         }
+
+        /* Le reste du CSS suit... */
     </style>
-    <link rel="stylesheet" href="style.css">
+
+    <link rel="stylesheet" href="styles.css"> <!-- Lien vers ton fichier CSS -->
 </head>
 <body>
+
     <div class="container">
-        <img src="Carmelo Mosca.png" alt="Carmelo Mosca" class="image-animation">
-        <div class="text-container">
-            <h1>Carmelo Mosca</h1>
-        </div>
+        <!-- Image avec animation -->
+        <img src="carmelo_mosca.png" alt="Carmelo Mosca" class="image-animation">
+        
+        <!-- Texte -->
+        <h1>Carmelo Mosca</h1>
     </div>
 
-    <script>
-        let scale = 1;
-
-        // Surveiller les changements de taille de la fenêtre et ajuster l'échelle
-        window.addEventListener('resize', function() {
-            // Utiliser un facteur de mise à l'échelle plus contrôlé
-            const scaleFactor = window.innerWidth / 1000; // Calcul basé sur la taille de la fenêtre
-            scale = Math.min(Math.max(0.7, scaleFactor), 1.2); // Limiter l'échelle entre 0.7 et 1.2
-            adjustScale();
-        });
-
-        function adjustScale() {
-            // Appliquer l'échelle au conteneur principal
-            document.querySelector('.container').style.transform = `scale(${scale})`;
-        }
-    </script>
 </body>
 </html>

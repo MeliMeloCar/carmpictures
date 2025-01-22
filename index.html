@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=3.0, user-scalable=yes">
     <title>Carmelo Mosca - Portfolio</title>
     <style>
         @font-face {
@@ -24,19 +24,6 @@
 
     <script>
         let scale = 1;
-        function adjustScale() {
-            document.querySelector('.container').style.transform = `scale(${scale})`;
-        }
-
-        window.addEventListener('wheel', function(event) {
-            if (event.deltaY < 0) { // Zoom
-                scale += 0.1;
-            } else { // Dézoom
-                scale -= 0.1;
-            }
-            scale = Math.max(0.5, Math.min(scale, 2)); // Limiter l'échelle
-            adjustScale();
-        });
 
         // Surveiller le zoom de la page via la modification de la taille de la fenêtre
         window.addEventListener('resize', function() {
@@ -44,6 +31,10 @@
             scale = Math.min(Math.max(0.5, scaleFactor), 2); // Limiter l'échelle entre 0.5 et 2
             adjustScale();
         });
+
+        function adjustScale() {
+            document.querySelector('.container').style.transform = `scale(${scale})`;
+        }
     </script>
 </body>
 </html>

@@ -18,22 +18,34 @@
             width: 100%;
             margin: 0;
             padding: 0;
-            overflow-x: hidden; /* Empêche le défilement horizontal */
+            overflow-x: hidden;
         }
 
         /* Conteneur des pages SVG en pleine largeur et hauteur */
         .svg-container {
             width: 100%;
-            height: 100vh; /* Chaque page prend toute la hauteur de l'écran */
+            height: 100vh;
             position: relative;
             overflow: hidden;
+            opacity: 0; /* Début invisible */
+            animation: fadeIn 1s ease-in-out forwards; /* Animation de fondu */
+        }
+
+        /* Animation pour le fondu des éléments */
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 1;
+            }
         }
 
         /* Page SVG en pleine largeur et hauteur */
         .page {
-            width: 100vw; /* Largeur égale à l'écran */
-            height: 100vh; /* Hauteur égale à l'écran */
-            object-fit: cover; /* Permet à l'image de couvrir toute la taille sans distorsion */
+            width: 100vw;
+            height: 100vh;
+            object-fit: cover;
             display: block;
         }
 
@@ -48,7 +60,21 @@
 
             .page {
                 width: 100%;
-                height: 100%; /* Redimensionner les SVG pour s'adapter à l'écran */
+                height: 100%;
+            }
+        }
+
+        /* Animation pour la page suivante avec un décalage */
+        .page-appear {
+            animation: slideIn 1s ease-out forwards;
+        }
+
+        @keyframes slideIn {
+            0% {
+                transform: translateY(100%);
+            }
+            100% {
+                transform: translateY(0);
             }
         }
     </style>
@@ -57,12 +83,12 @@
 
     <!-- Première page SVG -->
     <div class="svg-container">
-        <object class="page" type="image/svg+xml" data="1.svg" aria-label="Page 1 du design Canva"></object>
+        <object class="page page-appear" type="image/svg+xml" data="1.svg" aria-label="Page 1 du design Canva"></object>
     </div>
 
     <!-- Deuxième page SVG -->
     <div class="svg-container">
-        <object class="page" type="image/svg+xml" data="2.svg" aria-label="Page 2 du design Canva"></object>
+        <object class="page page-appear" type="image/svg+xml" data="2.svg" aria-label="Page 2 du design Canva"></object>
     </div>
 
 </body>

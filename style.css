@@ -13,17 +13,16 @@ body, html {
     justify-content: center;
     align-items: center;
     background-color: rgb(14, 10, 10); /* Couleur de fond */
+    font-family: 'Dream Avenue', sans-serif; /* Utilisation de la police Dream Avenue */
     overflow: hidden; /* Pour éviter tout débordement */
-    font-family: 'Dream Avenue', sans-serif;
 }
 
 /* Conteneur principal */
 .container {
-    text-align: center;
     position: relative;
     display: flex;
     justify-content: flex-start; /* Aligner à gauche */
-    align-items: center;
+    align-items: flex-start; /* Aligner en haut */
     width: 100%;
     height: 100%;
 }
@@ -36,7 +35,7 @@ body, html {
     transform: translateY(50px);
     animation: fadeInUp 1.5s forwards;
     position: absolute;
-    left: 10%; /* Décalage de 10% de la largeur de la fenêtre pour la laisser à gauche sans la coller */
+    left: 10%; /* Décalage de 10% de la largeur de la fenêtre pour laisser un espace à gauche */
 }
 
 /* Animation pour faire apparaître l'image de bas en haut */

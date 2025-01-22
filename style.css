@@ -1,93 +1,105 @@
-/* Réinitialisation de certaines marges */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-/* Général */
 body, html {
-    height: 100%;
-    width: 100%;
-    overflow: hidden;
-    font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  overflow-x: hidden;
 }
 
-/* Page générale */
-.page {
-    height: 100vh; /* Plein écran pour chaque page */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: #000; /* Fond noir */
-    transition: transform 1s ease-in-out;
+.hero {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #f0f0f0;
+  animation: fadeIn 2s ease-in-out;
 }
 
-/* Contenu de la page */
-.content {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
+.image-container {
+  width: 50%;
+  height: 100%;
+  overflow: hidden;
 }
 
-/* Image */
-.image {
-    max-width: 100%;
-    max-height: 100%;
-    object-fit: cover; /* S'assurer que l'image prend tout l'espace */
+.hero-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  animation: slideIn 3s ease-in-out;
 }
 
-/* Texte et bouton */
 .text-container {
-    color: white;
-    margin-top: 20px;
+  width: 50%;
+  padding: 20px;
+  text-align: left;
+  animation: fadeInText 2s ease-in-out;
 }
 
-.title {
-    font-size: 2.5rem;
-    margin-bottom: 1rem;
+.text-container h1 {
+  font-size: 3rem;
+  margin-bottom: 10px;
 }
 
-.description {
-    font-size: 1.2rem;
-    margin-bottom: 2rem;
+.text-container p {
+  font-size: 1.5rem;
+  margin-bottom: 20px;
 }
 
-.button {
-    background-color: #ff6b6b;
-    padding: 10px 20px;
-    color: white;
-    text-decoration: none;
-    border-radius: 5px;
-    font-size: 1.1rem;
-    transition: background-color 0.3s;
+.text-container a {
+  font-size: 1.2rem;
+  text-decoration: none;
+  color: #333;
+  border: 2px solid #333;
+  padding: 10px 20px;
+  border-radius: 5px;
+  transition: background-color 0.3s;
 }
 
-.button:hover {
-    background-color: #e54b4b;
+.text-container a:hover {
+  background-color: #333;
+  color: #fff;
 }
 
-/* Animation de transition entre les pages */
-.page + .page {
-    transform: translateY(100vh); /* Masquer la seconde page au départ */
+/* Animation Definitions */
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 
-.page:target {
-    transform: translateY(0); /* Lorsqu'on atteint la page */
+@keyframes slideIn {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(0);
+  }
 }
 
-/* Media Queries pour ajuster sur mobile */
+@keyframes fadeInText {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+/* Responsiveness */
 @media (max-width: 768px) {
-    .title {
-        font-size: 2rem;
-    }
+  .hero {
+    flex-direction: column;
+  }
 
-    .description {
-        font-size: 1rem;
-    }
+  .image-container, .text-container {
+    width: 100%;
+    height: auto;
+  }
 
-    .button {
-        font-size: 1rem;
-    }
+  .hero-image {
+    height: auto;
+    width: 100%;
+  }
 }

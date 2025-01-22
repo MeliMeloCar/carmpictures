@@ -1,11 +1,11 @@
-/* Style de base */
+/* Réinitialiser les marges et paddings */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-/* Conteneur global */
+/* Style du body et du conteneur */
 body, html {
     height: 100%;
     width: 100%;
@@ -16,31 +16,12 @@ body, html {
 }
 
 /* Conteneur principal */
-.content {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-    height: 100%;
-    position: relative;
-}
-
-/* Conteneur de l'image */
-.image-container {
-    position: relative;
-    width: 100%;
-    height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    box-shadow: 0 2px 8px rgba(63,69,81,0.16);
-    overflow: hidden;
-    border-radius: 8px;
+.container {
+    text-align: center;
 }
 
 /* Animation de l'image */
-.animated-image {
+.image-animation {
     width: 100%;
     max-width: 800px;
     opacity: 0;
@@ -48,7 +29,7 @@ body, html {
     animation: fadeInUp 1.5s forwards;
 }
 
-/* Animation "lever" */
+/* Animation pour faire apparaître l'image de bas en haut */
 @keyframes fadeInUp {
     0% {
         opacity: 0;
@@ -60,14 +41,10 @@ body, html {
     }
 }
 
-/* Conteneur du texte */
-.text-container {
-    text-align: center;
+/* Style du texte */
+h1 {
+    font-size: 74.5px;
     font-family: 'Dream Avenue', sans-serif;
     margin-top: 20px;
-}
-
-.text-container h1 {
-    font-size: 74.5px;
     color: #000000;
 }

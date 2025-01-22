@@ -21,7 +21,7 @@ body, html {
 .container {
     position: relative;
     display: flex;
-    flex-direction: row; /* Alignement en ligne, image à gauche, texte à droite */
+    flex-direction: column; /* Image en haut, texte et liens en dessous */
     justify-content: flex-start; /* Laisser l'image à gauche */
     align-items: flex-start; /* Aligner le texte en haut de l'image */
     width: 100%;
@@ -34,8 +34,7 @@ body, html {
     width: 40vw; /* Réduit la largeur de l'image à 40% de la fenêtre */
     max-width: 600px; /* Limite la taille maximale de l'image */
     height: auto; /* Pour garder le ratio */
-    margin-right: 20px; /* Espace entre l'image et le texte */
-    transition: transform 0.2s ease; /* Douce transition pour le zoom */
+    margin-bottom: 20px; /* Espace entre l'image et le texte */
 }
 
 /* Style du texte */
@@ -44,7 +43,24 @@ h1 {
     color: #ffffff; /* Couleur du texte */
     font-weight: bold;
     white-space: nowrap; /* Empêche le texte de passer à la ligne */
-    transition: transform 0.2s ease; /* Douce transition pour le zoom */
+    margin-bottom: 20px; /* Espace entre le texte et les icônes */
+}
+
+/* Conteneur des liens sociaux */
+.social-links {
+    display: flex;
+    gap: 20px; /* Espace entre les icônes */
+}
+
+/* Style des icônes sociales */
+.social-icon {
+    width: 30px; /* Largeur des icônes */
+    height: 30px; /* Hauteur des icônes */
+    transition: transform 0.2s ease; /* Animation pour zoom */
+}
+
+.social-icon:hover {
+    transform: scale(1.2); /* Agrandir l'icône au survol */
 }
 
 /* Ajustement global pour zoom/dézoom */

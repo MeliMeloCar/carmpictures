@@ -59,6 +59,8 @@ h1 {
     left: 50%; /* Centrer horizontalement */
     top: 0%; /* Aligné en haut de l'image */
     transform: translateX(-50%); /* Ajustement pour centrer le texte */
+    white-space: nowrap; /* Empêcher le texte de passer à la ligne */
+    text-align: center; /* Centrer le texte dans son conteneur */
 }
 
 /* Animation du texte pour qu'il apparaisse de gauche à droite */

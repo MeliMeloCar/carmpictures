@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Carmelo Mosca - Portfolio</title>
-    <!-- Importation de la police Dream Avenue depuis le fichier local -->
     <style>
         @font-face {
             font-family: 'Dream Avenue';
@@ -17,10 +16,7 @@
 </head>
 <body>
     <div class="container">
-        <!-- Conteneur de l'image -->
         <img src="Carmelo Mosca.png" alt="Carmelo Mosca" class="image-animation">
-        
-        <!-- Conteneur du texte -->
         <div class="text-container">
             <h1>Carmelo Mosca</h1>
         </div>
@@ -28,12 +24,10 @@
 
     <script>
         let scale = 1;
-        // Fonction pour ajuster l'échelle de l'image et du texte
         function adjustScale() {
             document.querySelector('.container').style.transform = `scale(${scale})`;
         }
 
-        // Événements pour zoomer et dézoomer
         window.addEventListener('wheel', function(event) {
             if (event.deltaY < 0) { // Zoom
                 scale += 0.1;

@@ -8,27 +8,20 @@
 /* Pour le body */
 body {
     font-family: Arial, sans-serif;
-}
-
-/* Conteneur principal */
-.content-wrapper {
-    display: flex;
-    flex-direction: column;
-    height: 100vh;
+    overflow-x: hidden;
 }
 
 /* Section 1 */
-#page1 {
-    flex: 1;
+.page {
     display: flex;
-    justify-content: space-between;
     align-items: center;
-    background-color: #f7f7f7;
+    justify-content: center;
+    height: 100vh;
+    scroll-snap-align: start;
     transition: background-color 0.3s ease;
-    padding: 20px;
 }
 
-/* Conteneur de l'image */
+/* Conteneur gauche - image */
 .left-container {
     flex: 1;
     display: flex;
@@ -36,14 +29,14 @@ body {
     align-items: center;
 }
 
-#image1 {
+.image1 {
     max-width: 80%;
     height: auto;
     border-radius: 8px;
     transition: transform 0.3s ease-in-out;
 }
 
-/* Conteneur du texte */
+/* Conteneur droit - texte */
 .right-container {
     flex: 1;
     display: flex;
@@ -71,12 +64,13 @@ body {
 
 /* Section 2 */
 #page2 {
-    flex: 1;
+    background-color: #fff;
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #fff;
     padding: 20px;
+    height: 100vh;
+    scroll-snap-align: start;
 }
 
 #page2 .text-container {
@@ -104,6 +98,17 @@ body {
         opacity: 1;
         transform: translateY(0);
     }
+}
+
+/* Effet de scroll */
+html, body {
+    height: 100%;
+    scroll-snap-type: y mandatory;
+    overflow-y: scroll;
+}
+
+.page {
+    scroll-snap-align: start;
 }
 
 /* Responsivité */

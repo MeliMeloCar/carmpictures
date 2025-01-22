@@ -27,7 +27,7 @@ body, html {
     width: 100%;
     max-width: 1200px; /* Limite la largeur du conteneur */
     padding-left: 10vw; /* Applique 10% d'espace à gauche */
-    text-align: center; /* Centre le texte */
+    text-align: center; /* Centrer le texte */
 }
 
 /* Image qui ajuste sa taille selon la taille de la fenêtre */
@@ -36,6 +36,7 @@ body, html {
     max-width: 800px; /* Limite la taille maximale de l'image */
     height: auto; /* Pour garder le ratio */
     margin-bottom: 20px; /* Espace entre l'image et le texte */
+    transition: transform 0.2s ease; /* Douce transition pour le zoom */
 }
 
 /* Style du texte */
@@ -43,7 +44,7 @@ h1 {
     font-size: 5vw; /* Le texte occupe 5% de la largeur de la fenêtre */
     color: #ffffff; /* Couleur du texte */
     font-weight: bold;
-    animation: fadeInText 2s ease-out forwards;
+    transition: transform 0.2s ease; /* Douce transition pour le zoom */
 }
 
 /* Animation pour faire apparaître le texte */
@@ -57,3 +58,9 @@ h1 {
         opacity: 1;
     }
 }
+
+/* Récupération de l'événement de zoom de la page */
+html {
+    transform-origin: center center; /* Zoom autour du centre de la page */
+}
+
